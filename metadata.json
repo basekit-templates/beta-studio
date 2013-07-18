@@ -3,7 +3,7 @@
 	"thumbnail":"betastudio.jpg",
 	"screenshot":"betastudio.jpg",
 	"pageTypes":["about"],
-    "colourSwatches":
+    "colorSwatches":
     {
         "Swatch 1": {
             "color1":"#ffffff",
