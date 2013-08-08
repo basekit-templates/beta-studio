@@ -1,8 +1,3 @@
-/* SCALING FUNCTION */
-.scale-value ( @property, @value: 13, @scale : 1) {
-  @property:  (@value * @scale)px;
-}
-
 body {
   background-color: @color-swatch1;
   margin: 0;
@@ -13,6 +8,10 @@ body {
     width: 90%;
     margin: 0 5%;
 
+}
+
+title {
+  display: block!important;
 }
 
 a {
@@ -113,8 +112,20 @@ blockquote {
    =============================== */
 
 .main {
-  padding: 64px 0;
+  padding: 20px 0;
 }
+
+/* DEFAULT PAGE TYPE */
+
+.bk-pt-default header {
+  border-bottom: 1px solid darken(@color-swatch2,5%);
+}
+
+.bk-pt-default .extendednavigation ul li:hover > ul {
+  border: 1px solid darken(@color-swatch2,5%);
+  border-top: 0;
+}
+
 
 /* ===============================
    HEADER
@@ -126,12 +137,23 @@ header {
 
 header .header-bg {
   width: 100%;
-  /*height: 232px;*/
   background-color: @color-swatch7;
   padding: 82px 0 102px;
 }
 
-.widget.companyheader .company-name h1 {
+.companyheader {
+  display: block;
+}
+
+/* COMPANY NAME */
+
+.widget.companyname {
+  width: 100%;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.widget.companyname h1 {
   display: inline-block;
   font-size:@font-swatch1-font-size;
   line-height:@font-swatch1-line-height;
@@ -144,60 +166,21 @@ header .header-bg {
   text-align: center;
 }
 
-.widget.companyheader {
-  width: 100%;
-  float: left;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
+/* LOGO */
 
-.widget.companyheader .logo {
-  display: block;
-  float: left;
-  width: 100%;
-  margin: 0 0 20px;
-}
-
-.widget.companyheader:before,
-.widget.companyheader:after {
-  content: " ";
-  display: table;
-}
-
-.widget.companyheader:after {
-  clear: both;
-}
-
-.widget.companyheader {
-  *zoom: 1;
-}
-
-.widget.companyheader .logo img {
-  max-width: 100%;
-  height: auto;
+.widget.logo img {
   display: block;
   margin: 0 auto;
 }
 
-.widget.companyheader .logo-bottom {
-  display: none;
-}
-
-.widget.companyheader .company-name {
-  width: 100%;
-  text-align: center;
-  display: block;
-  float: left;
-}
 
 /* ===============================
    FOOTER
    =============================== */
 
 footer {
-  padding: 4em 0;
+  padding: 2em 0 1.5em;
   background-color: @color-swatch3;
-  min-height: 150px;
   color: @color-swatch1;
 }
 
@@ -206,12 +189,27 @@ footer h1, footer h2, footer h3, footer h4 {
   padding-bottom: 20px;
 }
 
-footer p {
+footer p, footer .widget.profile span {
+  font-size: bkscale(@font-swatch5-font-size,0.9);
   font-family: @font-swatch5-font-family;
-  font-size: (@font-swatch5-font-size * 0.8);
-  color: lighten(@color-swatch5,20%);
+  color: lighten(@color-swatch3,30%);
   line-height: 2em;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
+}
+
+footer h4 {
+  padding-bottom: 8px;
+}
+
+/* FOOTER PROFILE STYLES */
+
+.widget.profile ul.twitter {
+    padding: 0;
+    margin: 0;
+}
+
+footer .columns-two-right .widget.profile span {
+  text-align: right;
 }
 
 /* ===============================
@@ -327,7 +325,7 @@ footer p {
 }
 
 .widget.extendednavigation ul li a:hover, .widget.extendednavigation ul li.folder .text:hover {
-  color: darken(@color-swatch7,5%);
+  color: @font-swatch6-color-hover;
 }
 
 .widget.extendednavigation li > ul {
@@ -361,6 +359,26 @@ footer p {
 
 .widget.extendednavigation ul li:hover > ul > li > a:hover {
   color: @color-swatch3;
+}
+
+/* EXTENDED NAVIGATION - INSIDE ZONE */
+
+.main .widget.extendednavigation {
+    max-width: 100%;
+    width: 100%;
+    float: none;
+}
+
+.main .widget.extendednavigation:before,
+.main .widget.extendednavigation:after {
+  content: " ";
+  display: table;
+}
+.main .widget.extendednavigation:after {
+  clear: both;
+}
+.main .widget.extendednavigation {
+  *zoom: 1;
 }
 
 /* ===============================
@@ -464,6 +482,7 @@ footer p {
     margin-right: 5px;
 }
 
+
 /* ===============================
    FEATURE LAYOUTS
    =============================== */
@@ -523,13 +542,12 @@ footer p {
 .widget.button button
 {
   padding: 20px 30px;
-  margin: 1em auto;
+  margin: 0;
   border: 0;
-
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight:@font-swatch7-font-weight;
-  background-color: @color-swatch7;
+  background-color: @font-swatch7-background-color;
   color: @font-swatch7-color;
   text-decoration: none;
   letter-spacing: 1px;
@@ -538,7 +556,7 @@ footer p {
 
 .widget.button button:hover 
 {
-  background-color: darken(@color-swatch7,5%);
+  background-color: @font-swatch7-background-color-hover;
   cursor: pointer;
 }
 
@@ -652,63 +670,109 @@ footer p {
    GALLERY WIDGET
    =============================== */
 
-.gallery-widget .inner {
-    background-image: none !important;
-}
-
 .widget.gallery
 {
 }
-.widget.gallery p
-{
-    padding: 10px;
-    color: #333333;
-}
-.widget.gallery ul.gallery-widget
-{
+
+.widget.gallery ul {
     display:block;
     margin: 0;
-    padding: 0px;
+    padding:0px;
     list-style: none;
-    min-height: 100px;
-    color: #555555;
-   
 }
-.widget.gallery ul.gallery-widget li
+
+.widget.gallery li {
+    float: left;
+    position: relative;
+    width: 33.3%;
+    padding-bottom: 33%;
+}
+
+.widget.gallery li  span.inner {
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color: @color-swatch1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.widget.gallery ul li.one-to-one span.inner
 {
-    display: inline-block;
-    padding: 0;
-    text-align: center;
+    background-size:100% 100%;
+}
+
+.widget.gallery ul li.portrait span.inner
+{
+    background-size:100% auto;
+}
+
+.widget.gallery ul li.landscape span.inner
+{
+    background-size:auto 100%;
+}
+
+.widget.gallery li span.inner {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 0px;
+    bottom: 16px;
     overflow: hidden;
-    margin-bottom: 20px;
-    width: 32%; 
-    font-family: @font-swatch4-font-family;
-    font-size: 12px;
 }
 
-.widget.gallery ul.gallery-widget li:nth-child(3n) {
-  float: right;
+.widget.gallery li span.inner img {
+    display:none;
 }
 
-.widget.gallery ul.gallery-widget li img {
-    width: 100%;
+.widget.gallery ul:before,
+.widget.gallery ul:after {
+  content: " ";
+  display: table;
 }
-.widget.gallery ul.gallery-widget li span.title, ul.gallery-widget li span.description
-{
-    width: 100%;
+.widget.gallery ul:after {
+  clear: both;
+}
+.widget.gallery ul {
+  *zoom: 1;
+}
+
+.widget.gallery li span.inner .title, .widget.gallery li span.inner .description {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: -50px;
+    background:@color-swatch1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
     text-align: center;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    font-family:@font-swatch5-font-family;
+    font-size:@font-swatch5-font-size;
+    font-weight: @font-swatch5-font-weight;
+    line-height:@font-swatch5-line-height;
+    color:@font-swatch5-color;
+    letter-spacing: @font-swatch5-letter-spacing;
 }
-.widget.gallery ul.gallery-widget li span.title.visible, ul.gallery-widget li span.description.visible
-{
-    display:block;
+.widget.gallery li span.inner:hover .title {
+   margin-bottom: 0;
 }
-.widget.gallery ul.gallery-widget li span.title {
-    font-weight: bold;
-    display: block;
-    margin: 4px 0;
+
+.widget.gallery li span.inner .description {
+  display: none;
 }
-.widget.gallery ul.gallery-widget li span.description {
-    color: lighten(@color-swatch5,2%);
+
+.widget.gallery li span.inner a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* ===============================
@@ -716,12 +780,12 @@ footer p {
    =============================== */
 
 .widget.line {
-    padding: 20px 0;
+    padding: 10px 0 30px;
 }
 
 hr.line {
    background-color: darken(@color-swatch2,5%);
-   height: 3px;
+   height: 1px;
    width: 100%;
    border: none;
 }
@@ -1217,6 +1281,19 @@ hr.line.align-right {
 
 
 /* ===============================
+   PROFILE WIDGET
+   =============================== */
+
+.widget.profile span {
+  display: block;
+  font-family: @font-swatch5-font-family;
+  font-size: @font-swatch5-font-size;
+  line-height: @font-swatch5-line-height;
+  color: @font-swatch5-color;
+}
+
+
+/* ===============================
    IPAD WIDTH
    =============================== */
 
@@ -1237,7 +1314,7 @@ hr.line.align-right {
   }
 
   .widget.companyheader .company-name h1 {
-    font-size:(@font-swatch1-font-size * 0.8)
+    font-size:bkscale(@font-swatch1-font-size, 0.4)
   }
 
   /* NAV */
@@ -1267,7 +1344,7 @@ hr.line.align-right {
 
   .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
     margin-left: 0;
-    font-size: (@font-swatch7-font-size * 0.9);
+    font-size: bkscale(@font-swatch7-font-size, 0.9);
   }
 
   .widget.extendednavigation li:hover > ul {
@@ -1283,7 +1360,7 @@ hr.line.align-right {
   }
 
   .widget.extendednavigation li:hover > ul li:first-child {
-    padding-top: 15px;
+    padding-top: 0;
   }
 
    .widget.extendednavigation ul li:hover > ul li.folder .text {
@@ -1311,20 +1388,29 @@ hr.line.align-right {
   }
 
   .widget.feature h2 {
-    font-size:(@font-swatch8-font-size * 0.65); /* 40px */
-    line-height: 1.5em;
+    line-height: 1;
+    font-size:bkscale(@font-swatch8-font-size, 0.8); 
   }
 
   .widget.feature h3 {
-    font-size:(@font-swatch9-font-size * 0.8); /* 40px */
-    line-height: 1.3em;
+    font-size:bkscale(@font-swatch9-font-size, 0.8); 
   }
 
     .widget.feature button {
       font-size: .8em;
       padding: 10px 14px;
   }
+
+  /* GALLERY */
+
+  .widget.gallery ul.gallery-widget li
+  {
+      width: 50%;
+      padding-bottom: 50%;
+  }
+
 }
+
 
 /* ===============================
    IPHONE WIDTH
@@ -1353,8 +1439,8 @@ hr.line.align-right {
   }
 
   /* COMPANY HEADER */
-  .widget.companyheader .company-name h1 {
-    font-size:(@font-swatch1-font-size * 0.6);
+  .widget.companyname h1 {
+    font-size:bkscale(@font-swatch1-font-size, 0.8);
     padding-bottom: 3px;
   }
 
@@ -1419,7 +1505,6 @@ hr.line.align-right {
   .widget.extendednavigation li:hover > ul li {
     display: block!important;
     margin-bottom: 0;
-    text-align: center!important;
     padding: 0;
     border-bottom: 1px solid darken(@color-swatch2,2%)!important;
   }
@@ -1454,22 +1539,20 @@ hr.line.align-right {
   /* FEATURE */
 
   .widget.feature .feature-bgimg {
-    height: 220px; /* should be in media query*/
+    height: 220px; 
    }
 
   .widget.feature .content {
     height: 220px;
-    /*padding: 1.5em 0;*/
   }
 
   .widget.feature h2 {
-    font-size:(@font-swatch8-font-size * 0.5); /* 20px */
-    line-height: 1.7em;
+    font-size:bkscale(@font-swatch8-font-size, 0.6);
     padding-bottom: 4px;
   }
 
   .widget.feature h3 {
-    display: none;
+
   }
 
   .widget.feature button {
@@ -1541,18 +1624,6 @@ hr.line.align-right {
     text-decoration: none;
   }
 
-  /* GALLERY */
-
-  .widget.gallery p
-  {
-    padding: 10px;
-  }
-
-  .widget.gallery ul.gallery-widget li
-  {
-    width: 96%;
-  }
-
 }
 
 @media only screen and (min-width: 1140px) {
@@ -1561,6 +1632,7 @@ hr.line.align-right {
     margin: 0 auto;
   }
 }
+
 
 .clearfix:before,
 .clearfix:after {
