@@ -1,7 +1,7 @@
 {
-	"name":"Beta Studio",
-	"thumbnail":"betastudio.png",
-	"screenshot":"betastudio.png",
+    "name":"Beta Studio",
+    "thumbnail":"betastudio.png",
+    "screenshot":"betastudio.png",
     "colorSwatches":
     {
         "Swatch 1": {
