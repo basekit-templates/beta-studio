@@ -1,7 +1,7 @@
 {
-    "name":"Beta Studio",
-    "thumbnail":"betastudio.png",
-    "screenshot":"betastudio.png",
+	"name":"Beta Studio",
+	"thumbnail":"betastudio.png",
+	"screenshot":"betastudio.png",
     "colorSwatches":
     {
         "Swatch 1": {
@@ -100,8 +100,8 @@
             "color": "@color-swatch6",
             "color-hover": "darken(@color-swatch6,5%)",
             "letter-spacing": "inherit",
-            "background-color": "@color-swatch3",
-            "background-color-hover": "@color-swatch3"
+            "background-color": "@color-swatch1",
+            "background-color-hover": "@color-swatch2"
         },
         "font7": {
             "font-family": "Montserrat",
