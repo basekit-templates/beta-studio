@@ -166,17 +166,24 @@ header .header-bg {
   margin-top: 14px;
 }
 
-.widget.companyname h1 {
+.widget.companyname a {
   display: inline-block;
-  font-size:@font-swatch1-font-size;
-  line-height:@font-swatch1-line-height;
-  color: @color-swatch1;
   border-bottom: 4px solid @color-swatch1;
   text-transform: uppercase;
-  letter-spacing: 6px;
-  margin: 0;
   padding: 0 0 10px;
   text-align: center;
+
+  font-family:@font-swatch10-font-family;
+  font-weight: @font-swatch10-font-weight;
+  color:@font-swatch10-color;
+  line-height:@font-swatch10-line-height;
+  letter-spacing: @font-swatch10-letter-spacing;
+  font-size: @font-swatch10-font-size;
+}
+
+.widget.companyname a:hover {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* LOGO */
