@@ -2,7 +2,7 @@
 
 {% block content %}
 
- <header>
+<header>
     <div class="header-bg">
          <div class="wrapper companyheader clearfix">
             {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
@@ -30,7 +30,9 @@
                 {{widget('profile', 'footercolumn1profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
             </div>
             <div class="column columns-two-right">
-                {{widget('profile', 'footercolumn2profileaddress', { 'profileType':'address', 'address':'profile'})|raw}}
+                {{widget('content', 'footercolumn2content1', {"content":"<h4>Lorem Ipsum</h4>"})|raw}}
+                {{widget('profile', 'footercolumn2profiletweet', { 'profileType':'tweet', 'tweet':'profile'})|raw}}
+                {{widget('profile', 'footercolumn2profilecopyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
             </div>
         </div>
     </div>

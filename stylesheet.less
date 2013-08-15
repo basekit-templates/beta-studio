@@ -222,10 +222,6 @@ footer h4 {
 }
 
 
-footer .columns-two-right .widget.profile span {
-  text-align: right;
-}
-
 /* ===============================
    STANDARD NAVIGATION
    =============================== */
@@ -358,7 +354,6 @@ footer .columns-two-right .widget.profile span {
 .widget.extendednavigation ul li:hover > ul > li {
   display: block;
   width: 100%;
-  text-align: left;
 }
 
 .widget.extendednavigation ul li:hover > ul li a {
@@ -861,11 +856,11 @@ footer .columns-two-right .widget.profile span {
    =============================== */
 
 .widget.line {
-    padding: 10px 0 30px;
+    padding: 20px 0px 30px;
 }
 
 hr.line {
-   background-color: darken(@color-swatch2,5%);
+   background-color: lighten(@color-swatch4,30%);
    height: 1px;
    width: 100%;
    border: none;
@@ -955,8 +950,7 @@ hr.line.align-right {
 
 .widget.twitter .twitter-profile-pic {
     float: left;
-    margin: 32px 30px 70px;
-
+    margin: 32px 30px 0px;
 }
 
 .widget.twitter .twitter-content {
@@ -1023,6 +1017,10 @@ hr.line.align-right {
     height: 72px;
     width: 100%;
     border: 0;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     color: @color-swatch5;
@@ -1033,20 +1031,23 @@ hr.line.align-right {
 
 .widget.contactform fieldset input:focus, .widget.contactform fieldset textarea:focus {
   outline: none;
-  box-shadow: inset 0 0 0 1px @color-swatch3;
+  box-shadow: inset 0 0 0 1px lighten(@color-swatch5,20%);
 }
 
 .widget.contactform fieldset textarea {
     height: 150px;
     width: 100%;
     border: 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
     text-indent: 16px;
-    padding-top: 14px;
+    padding: 14px 0px 0px 0px;
     margin-top: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     resize: none;
 }
 
@@ -1064,9 +1065,8 @@ hr.line.align-right {
   }
 
 .widget.contactform fieldset button.btn {
-    float: right;
     padding: 20px 30px;
-    margin: 0;
+    margin: 0px;
     border: 0;
 
     font-family: @font-swatch2-font-family;
@@ -1639,16 +1639,39 @@ footer .columns-two-right .widget.profile span {
       width: 72%;
   }
 
+  .widget.signupform {
+    padding: 20px 20px 20px;
+  }
+
   .widget.signupform button {
     font-size: 14px;
     width: 25%;
     height: 62px;
   }
 
+  /* TWITTER */
+
+  .widget.twitter, .widget.contactform form {
+    padding: 20px;
+  }
+
+  .widget.twitter ul li {
+    padding-bottom: 20px;
+  }
+
+  .widget.twitter .twitter-content, .widget.map {
+    padding: 20px;
+  }
+
+  .widget.twitter .twitter-profile-pic {
+      margin: 20px 20px 0px;
+  }
+
   /* SLIDESHOW */
 
   .widget.responsiveslideshow .slideshow-widget-controls {
     padding: 0;
+    top: -36px;
   }
 
   .widget.responsiveslideshow .slideshow-widget-controls .dot {
@@ -1665,7 +1688,7 @@ footer .columns-two-right .widget.profile span {
     .widget.responsiveslideshow .slideshow-widget-controls .dot {
         height: 13px;
         width: 13px;
-        margin: 29px 5px;
+        margin: 0px 5px;
     }
 
 }
@@ -1676,6 +1699,18 @@ footer .columns-two-right .widget.profile span {
    =============================== */
 
 @media only screen and (max-width: 480px) {
+
+  h1 {
+    font-size: bkscale(@font-swatch1-font-size,0.9);
+  }
+
+  h2 {
+    font-size: bkscale(@font-swatch2-font-size,0.9);
+  }
+
+  h3 {
+    font-size: bkscale(@font-swatch3-font-size,0.9);
+  }
 
   header .header-bg {
     padding: 52px 0 72px;
@@ -1697,11 +1732,14 @@ footer .columns-two-right .widget.profile span {
     display: none;
   }
 
-  /* COMPANY HEADER */
+  .widget.twitter ul li {
+    padding-bottom: 14px;
+  }
 
-  .widget.companyname h1 {
-    font-size:bkscale(@font-swatch1-font-size, 0.8);
-    padding-bottom: 3px;
+  /* COMPANY NAME */
+
+  .widget.companyname a {
+    border-bottom: 0;
   }
 
   /* NAV */
@@ -1845,8 +1883,16 @@ footer .columns-two-right .widget.profile span {
       font-size: 14px;
   }
 
-    .widget.twitter .twitter-content {
-        padding: 20px;
+  .widget.twitter .twitter-content {
+      padding: 20px;
+    }
+
+    .widget.contactform fieldset textarea {
+      margin-bottom: 10px;
+    }
+
+    .widget.contactform fieldset input {
+      margin-bottom: 20px;
     }
 
     footer .columns-two-right .widget.profile span {
@@ -1857,6 +1903,12 @@ footer .columns-two-right .widget.profile span {
 
     .widget.responsiveslideshow .slideshow-widget-wrapper, .widget.responsiveslideshow .slideshow-image-list {
         height: 250px;
+    }
+
+    .widget.responsiveslideshow .slideshow-widget .btn-prev, 
+    .widget.responsiveslideshow .slideshow-widget .btn-next {
+      height: 40px;
+      width: 40px;
     }
 
 }
