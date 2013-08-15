@@ -135,7 +135,7 @@
             "font-weight": "400",
             "line-height": "38px",
             "color": "@color-swatch1",
-            "letter-spacing": "6px"
+            "letter-spacing": "5px"
         }
     }
 }
