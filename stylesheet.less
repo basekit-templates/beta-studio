@@ -284,6 +284,10 @@ footer h4 {
   margin: 0;
 }
 
+.widget.extendednavigation a.pull {
+  display: none;
+}
+
 .widget.extendednavigation ul.align-center li
 {
   text-align: center;
@@ -1564,6 +1568,10 @@ hr.line.align-right {
     padding: 62px 0 82px;
   }
 
+header nav {
+  padding-top: 36px;
+}
+
   .widget.companyheader {
     width: 100%;
     display: block;
@@ -1591,42 +1599,85 @@ hr.line.align-right {
     width: 100%;
   }
 
-  .widget .extendednavigation ul {
-    display: table-row;
+  /* NAV ICON */
+
+  .widget .extendednavigation a.pull {
+    display: block;
     width: 100%;
-    float: none!important;
+    position: absolute;
+    top: 22px;
   }
 
-  .widget .extendednavigation li {
-    display: table-cell !important;
-    float: none!important;
-    text-align: center;
+    .widget .extendednavigation a.pull:after {
+    content:"";
+    background: image('/images/nav-icon.png') no-repeat;
+    background-color: @color-swatch7;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: -50px;
   }
 
-  .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
-    margin-left: 0;
-    font-size: bkscale(@font-swatch7-font-size, 0.9);
+  .main .widget .extendednavigation a.pull {
+    display: none;
   }
 
-  .widget.extendednavigation li:hover > ul {
-    width: auto;
-    padding: 0;
-    margin-top: 8px;
-  }
+    /* NAV */
 
-  .widget.extendednavigation li:hover > ul li {
-    display: block!important;
-    border: 0!important;
-    padding: .2em 0;
-  }
+    .widget .extendednavigation ul {
+        width: 100%;
+        display: none;
+        padding: 0px; 
+    }
 
-  .widget.extendednavigation li:hover > ul li:first-child {
-    padding-top: 0;
-  }
+    .widget .extendednavigation li {
+        width: 100%;
+        padding: 0px;
+        border-bottom: 1px solid darken(@color-swatch2,3%);
+    }
 
-   .widget.extendednavigation ul li:hover > ul li.folder .text {
-    margin-left: 0;
-  }
+    .widget.extendednavigation ul li.folder {
+      padding: 0;
+      background-image: image('/images/plus.png');
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+
+    .widget .extendednavigation li:last-child {
+      border-bottom: 0;
+    }
+
+    .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
+        padding: 18px 12px;
+    }
+
+    .widget.extendednavigation ul li > ul {
+        display: none!important;
+    }
+
+    .widget.extendednavigation ul li:hover > ul {
+        display: block!important;
+        width: 100%;
+        padding: 0;
+    }
+
+    .widget.extendednavigation ul li:hover > ul li {
+      border-bottom: 0;
+    }
+
+    .widget.extendednavigation ul li:hover > ul li a {
+        padding: 12px 18px;
+    }
+
+    .widget.extendednavigation ul li:hover > ul li a .text {
+      padding: 6px 26px;
+    }
+
+    .widget.extendednavigation ul li:hover > ul li:first-child {
+
+    }
 
   /* OTHER */
 
@@ -1776,100 +1827,9 @@ hr.line.align-right {
 
   .widget.companyname a {
     border-bottom: 0;
-  }
-
-  /* NAV */
-
-  .widget.extendednavigation {
-    width: 100%;
-  }
-  .widget .extendednavigation {
-    display: block;
-    width: 100%;
-  }
-
-  .widget .extendednavigation ul {
-    display: block;
-    width: 100%;
-    float: left;
-    margin: 0;
-  }
-
-  .widget .extendednavigation ul li {
-    display: block!important;
-    width: 100%;
-    border-left: 0;
-    border-bottom: 1px solid darken(@color-swatch2,6%);
-    padding: 0;
-    text-align: center;
-  }
-
-  .widget .extendednavigation li:hover {
-    background-color: darken(@color-swatch2,3%);
-  }
-
-  .widget.extendednavigation ul li.folder {
     padding: 0;
   }
 
-  .widget .extendednavigation ul li a {
-    padding: 1.4em 1em;
-  }
-
-  .widget.extendednavigation ul li.folder:hover {
-    border-left: 1px solid darken(@color-swatch2,6%);
-    border-right: 1px solid darken(@color-swatch2,6%);
-  }
-
-  .widget.extendednavigation ul li.folder .text {
-    padding: 1.4em 1em;
-    margin-left: 0;
-  }
-
-  .widget .extendednavigation ul li:last-child {
-    border: 0;
-  }
-
-  .widget.extendednavigation ul li:hover > ul {
-    width: 100%;
-    margin-left: -1px;
-    border: 1px solid darken(@color-swatch2,6%);
-    border-top: 0;
-  }
-
-  .widget.extendednavigation li:hover > ul li {
-    display: block!important;
-    margin-bottom: 0;
-    padding: 0;
-    border-bottom: 1px solid darken(@color-swatch2,2%)!important;
-  }
-
-  .widget.extendednavigation li:hover > ul > li > a {
-    padding: 0;
-  }
-
-  .widget.extendednavigation ul li:hover > ul li:first-child {
-    padding-top: 0;
-  }
-  
-  /* UL ALIGN RIGHT */
-  .widget.extendednavigation ul.align-right li:hover ul li {
-    text-align: right;
-  }
-
-  .widget.extendednavigation ul.align-right li.folder {
-    background-position: 12px center;
-  }
-
-  /* UL ALIGN CENTER */
-  .widget.extendednavigation ul.align-left li:hover ul li {
-    text-align: center;
-  }
-
-  /* UL ALIGN LEFT */
-  .widget.extendednavigation ul.align-left li:hover ul li {
-    text-align: left;
-  }
 
   /* FEATURE */
 
