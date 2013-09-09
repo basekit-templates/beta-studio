@@ -2,6 +2,11 @@
 	"name":"Beta Studio",
 	"thumbnail":"betastudio.png",
 	"screenshot":"betastudio.png",
+    "tags": {
+    "en": ["minimal", "clean", "floral", "modern"],
+    "es": ["minimalista", "limpio", "decorativo", "moderno"],
+    "br": ["minimalista", "limpo", "florido", "moderno"]
+    },
     "colorSwatches":
     {
         "Swatch 1": {
