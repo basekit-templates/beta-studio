@@ -3,9 +3,9 @@
 	"thumbnail":"betastudio.png",
 	"screenshot":"betastudio.png",
     "tags": {
-    "en": ["minimal", "clean", "floral", "modern"],
-    "es": ["minimalista", "limpio", "decorativo", "moderno"],
-    "br": ["minimalista", "limpo", "florido", "moderno"]
+    "en": ["minimal", "clean", "floral", "modern", "creative", "typography", "simple", "contemporary", "flexible", "florist", "studio", "portfolio", "designer", "sans-serif"],
+    "es": ["minimalista", "limpio", "decorativo", "moderno", "creativo", "tipográfico", "simple", "contemporaneo", "flexible", "florista", "estudio", "portafolio", "diseñador", "sans-serif"],
+    "br": ["minimalista", "limpo", "florido", "moderno", "criativo", "tipográfico", "simples", "contemporâneo", "flexível", "florista", "estúdio", "portfolio", "designer", "sans-serif"]
     },
     "colorSwatches":
     {
