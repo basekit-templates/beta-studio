@@ -181,7 +181,6 @@ header .header-bg {
 .widget.companyname a {
   display: inline-block;
   border-bottom: 4px solid @color-swatch1;
-  text-transform: uppercase;
   padding: 0 0 10px;
   text-align: center;
 
@@ -574,7 +573,6 @@ footer h4 {
     color: @font-swatch7-color;
     text-decoration: none;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .widget.clicktocall a:hover {
@@ -638,8 +636,7 @@ footer h4 {
   background-color: @font-swatch7-background-color;
   color: @font-swatch7-color;
   text-decoration: none;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: @font-swatch7-letter-spacing;
 }
 
 .widget.button button:hover 
@@ -1107,8 +1104,7 @@ hr.line.align-right {
     background-color: @color-swatch7;
     color: @color-swatch1;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: @font-swatch7-letter-spacing;
 }
   
 .widget.contactform fieldset button.btn:hover {
@@ -1144,29 +1140,6 @@ hr.line.align-right {
     font-weight: bold;
 }
 
-   /* ===============================
-   DROPBOX WIDGET
-   =============================== */
-
- .widget.dropbox .b-wrap .btn {
- margin: 0;
- padding: 20px 22px 20px 45px;
- background-image: image('/images/dropbox-icon.png');
- background-size: 20px;
- background-repeat: no-repeat;
- background-position: 19px center;
- margin: 2.2em auto;
- border: none;
- font-family: @font-swatch7-font-family;
- font-size: @font-swatch7-font-size;
- font-weight:@font-swatch7-font-weight;
- background-color: @font-swatch7-background-color;
- color: @font-swatch7-color;
- text-decoration: none;
- cursor: pointer;
- text-transform:uppercase;
-}
-
 
 /* ===============================
    TWEET THIS WIDGET
@@ -1191,7 +1164,6 @@ hr.line.align-right {
     color: @font-swatch7-color;
     text-decoration: none;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .widget.tweet a {
