@@ -341,11 +341,15 @@ footer h4 {
 
 .widget.extendednavigation ul li.folder {
   padding-right: 12px;
-  background-image: image('/images/plus.png');
+  background-image: none;
   background-position: right center;
   background-repeat: no-repeat;
   height: 100%;
   cursor: pointer;
+  &:after {
+	right: 16px;
+	top: 46%;
+  }
 }
 
 .widget.extendednavigation ul li a:hover, .widget.extendednavigation ul li.folder .text:hover {
@@ -1150,10 +1154,10 @@ hr.line.align-right {
 
 .svg .widget.tweet a {
     background-image: image('/images/social/socialicons-twitter.svg');
-    background-position: 10px 18px;
+	background-position: 10px 14px;
     background-repeat: no-repeat;
     background-size: 22px;
-    padding: 20px 14px 20px 39px;
+	padding: 14px 14px 15px 39px;
     margin: 0;
     border: 0;
     font-family: @font-swatch7-font-family;
@@ -1662,7 +1666,6 @@ header nav {
 
     .widget.extendednavigation ul li.folder {
       padding: 0;
-      background-image: image('/images/plus.png');
       background-position: right center;
       background-repeat: no-repeat;
     }
