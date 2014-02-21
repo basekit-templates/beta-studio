@@ -1591,7 +1591,7 @@ hr.line.align-right {
   }
 
 header nav {
-  padding-top: 36px;
+  min-height: 36px;
 }
 
   .widget.companyheader {
@@ -1627,19 +1627,22 @@ header nav {
     display: block;
     width: 100%;
     position: absolute;
-    top: 22px;
+    top: 8px;
+	right: 0;
+	width: 20px;
+	height: 20px;
   }
 
     .widget .extendednavigation a.pull:after {
     content:"";
-    background: image('/images/nav-icon.png') no-repeat;
+    background: image('/images/nav-icon.png') no-repeat center;
     background-color: @color-swatch7;
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
     display: inline-block;
     position: absolute;
-    right: 0px;
-    top: -50px;
+    right: 0;
+    top: 0;
   }
 
   .main .widget .extendednavigation a.pull {
@@ -1655,7 +1658,7 @@ header nav {
     .widget .extendednavigation ul {
         width: 100%;
         display: none;
-        padding: 0px; 
+        padding: 36px 0 0 0; 
     }
 
     .widget .extendednavigation li {
