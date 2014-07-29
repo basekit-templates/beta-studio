@@ -3,6 +3,7 @@
 	"thumbnail":"betastudio.png",
 	"screenshot":"betastudio.png",
 	"templateType":"standard",
+    "pageTypes": ["home"],
     "tags": {
     "en": ["minimal", "clean", "floral", "modern", "creative", "typography", "simple", "contemporary", "flexible", "florist", "studio", "portfolio", "designer", "sans-serif"],
     "es": ["minimalista", "limpio", "decorativo", "moderno", "creativo", "tipográfico", "simple", "contemporaneo", "flexible", "florista", "estudio", "portafolio", "diseñador", "sans-serif"],
