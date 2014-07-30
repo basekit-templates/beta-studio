@@ -4,13 +4,6 @@
    
 @import "@{templateCommon}/basekit-bootstrap.less";
 
-// @import "@{templateLocal}/css/common-forms.less";
-// @import "@{templateLocal}/css/widgets-blog.less";
-// @import "@{templateLocal}/css/widgets-menu.less";
-// @import "@{templateLocal}/css/widgets-ecom.less";
-
-@desktop: ~"only screen and (min-width : 769px)";
-
 
 /* ===============================
    TEMPLATE CSS
@@ -18,6 +11,8 @@
 
 body {
   background-color: @color-swatch1;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -37,9 +32,6 @@ title {
 
 .main {
   padding: 20px 0;
-  .widget {
-    clear: both;
-  }
 }
 
 /* DEFAULT PAGE TYPE */
@@ -85,6 +77,13 @@ header.bk-header .header-bg {
   border-bottom: 4px solid @color-swatch1;
   padding: 0 0 10px;
   text-align: center;
+
+  font-family:@font-swatch10-font-family;
+  font-weight: @font-swatch10-font-weight;
+  color:@font-swatch10-color;
+  line-height:@font-swatch10-line-height;
+  letter-spacing: @font-swatch10-letter-spacing;
+  font-size: @font-swatch10-font-size;
 }
 
 .widget.companyname a:hover {
@@ -128,6 +127,53 @@ footer.bk-footer h4 {
 }
 
 
+/* ===============================
+   STANDARD NAVIGATION
+   =============================== */
+
+.widget.navigation {
+}
+
+.widget.navigation ul {
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.widget.navigation ul.align-center li
+{
+  text-align: center;
+}
+
+.widget.navigation ul.align-left li
+{
+  text-align: left;
+}
+
+.widget.navigation ul.align-right li
+{
+  text-align: right;
+}
+
+.widget.navigation ul li {
+  float: left;
+  display: block;
+  padding-right: 40px;
+}
+
+.widget.navigation ul li a {
+  display: block;
+  font-family:@font-swatch6-font-family;
+  font-size:@font-swatch6-font-size;
+  font-weight: @font-swatch6-font-weight;
+  color: @font-swatch6-color;
+  line-height:@font-swatch6-line-height;
+  letter-spacing: @font-swatch6-letter-spacing;
+}
+
+.widget.navigation ul li a:hover {
+  text-decoration: none;
+  color: @color-swatch3;
+}
 
 /* ===============================
    EXTENDED NAVIGATION
@@ -249,6 +295,26 @@ footer.bk-footer h4 {
   color: @color-swatch3;
 }
 
+/* EXTENDED NAVIGATION - INSIDE ZONE */
+
+.main .widget.extendednavigation {
+    max-width: 100%;
+    width: 100%;
+    float: none;
+    text-align: left;
+}
+
+.main .widget.extendednavigation:before,
+.main .widget.extendednavigation:after {
+    content: " ";
+    display: table;
+  }
+.main .widget.extendednavigation:after {
+    clear: both;
+}
+.main .widget.extendednavigation {
+    *zoom: 1;
+}
 
 /* ===============================
    FEATURE
@@ -270,12 +336,24 @@ footer.bk-footer h4 {
 /* FEATURE TITLE */
 
 .widget.feature h2 {
+  font-family:@font-swatch8-font-family;
+  font-size:@font-swatch8-font-size;
+  font-weight: @font-swatch8-font-weight;
+  line-height:@font-swatch8-line-height;
+  color: @font-swatch8-color;
+  letter-spacing: @font-swatch8-letter-spacing;
   text-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 
 /* FEATURE STRAPLINE */
 
 .widget.feature h3 {
+  font-family:@font-swatch9-font-family;
+  font-size: @font-swatch9-font-size;
+  font-weight: @font-swatch9-font-weight;
+  line-height:@font-swatch9-line-height;
+  color: @font-swatch9-color;
+  letter-spacing: @font-swatch9-letter-spacing;
   padding-bottom: 0;
 }
 
@@ -303,10 +381,48 @@ footer.bk-footer h4 {
   cursor: pointer;
 }
 
+.widget.feature button.btn.justifyleft
+{
+    text-align: left;
+}
+
+.widget.feature button.btn.justifycenter
+{
+    text-align: center;
+}
+
+.widget.feature button.btn.justifyright
+{
+    text-align: right;
+}
+
+.widget.feature button.btn.justifyfull
+{
+    text-align: justify;
+}
+
+.widget.feature button.btn.italic {
+    font-style: italic;
+}
+
+.widget.feature button.btn.bold {
+    font-weight: bold;
+}
+
+.widget.feature button span {
+    vertical-align: center;
+}
+
+.widget.feature button i {
+    margin-right: 5px;
+}
+
+
+
 
 
 /* ===============================
-   GALLERY
+   GALLERY: ;
    =============================== */
 
 .widget.gallery {
@@ -852,6 +968,69 @@ hr.line.align-right {
   cursor: pointer;
 }
 
+.widget.contactform fieldset button.btn.justifyleft
+{
+    text-align: left;
+}
+
+.widget.contactform fieldset button.btn.justifycenter
+{
+    text-align: center;
+}
+
+.widget.contactform fieldset button.btn.justifyright
+{
+    text-align: right;
+}
+
+.widget.contactform fieldset button.btn.justifyfull
+{
+    text-align: justify;
+}
+
+.widget.contactform fieldset button.btn.italic {
+    font-style: italic;
+}
+
+.widget.contactform fieldset button.btn.bold {
+    font-weight: bold;
+}
+
+
+/* ===============================
+   TWEET THIS WIDGET
+   =============================== */
+
+.widget.tweet {
+   padding: 20px 0; 
+}
+
+.svg .widget.tweet a {
+    background-image: image('/images/social/socialicons-twitter.svg');
+	background-position: 10px 14px;
+    background-repeat: no-repeat;
+    background-size: 22px;
+	padding: 14px 14px 15px 39px;
+    margin: 0;
+    border: 0;
+    font-family: @font-swatch7-font-family;
+    font-size: @font-swatch7-font-size;
+    font-weight:@font-swatch7-font-weight;
+    background-color: @font-swatch7-background-color;
+    color: @font-swatch7-color;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.widget.tweet a {
+  background-image: image('/images/social/socialicons-twitter.png');
+}
+
+.widget.tweet a:hover 
+{
+    background-color: @font-swatch7-background-color-hover;
+    cursor: pointer;
+}
 
 
 /* ==================================
