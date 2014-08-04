@@ -1,0 +1,72 @@
+// =============================================================================================
+// TYPOGRAPHY
+
+// Headings
+
+h1 {
+  @media @tablet {
+    font-size: bkscale(@font-swatch1-font-size, 0.9);
+    line-height: bkscale(@font-swatch1-line-height, 0.9);
+  }
+  @media @mobile {
+    font-size: bkscale(@font-swatch1-font-size, 0.8);
+    line-height: bkscale(@font-swatch1-line-height, 0.8);
+  }
+}
+
+h2 {
+  @media @tablet {
+    font-size: bkscale(@font-swatch2-font-size, 0.9);
+    line-height: bkscale(@font-swatch2-line-height, 0.9);
+  }
+  @media @mobile {
+    font-size: bkscale(@font-swatch2-font-size, 0.8);
+    line-height: bkscale(@font-swatch2-line-height, 0.8);
+  }
+}
+
+h3 {
+  @media @tablet {
+    font-size: bkscale(@font-swatch3-font-size, 0.9);
+    line-height: bkscale(@font-swatch3-line-height, 0.9);
+  }
+  @media @mobile {
+    font-size: bkscale(@font-swatch3-font-size, 0.8);
+    line-height: bkscale(@font-swatch3-line-height, 0.8);
+  }
+}
+
+h4 {
+  font-size: bkscale(@font-swatch4-font-size, 0.8);
+  line-height: bkscale(@font-swatch4-line-height, 0.8);
+}
+
+h5 {
+  font-size: bkscale(@font-swatch4-font-size, 0.8);
+  line-height: bkscale(@font-swatch4-line-height, 0.8);
+
+}
+
+h6 {
+  font-size: bkscale(@font-swatch4-font-size, 0.8);
+  line-height: bkscale(@font-swatch4-line-height, 0.8);
+}
+
+// Normal text
+
+p {
+  padding-bottom: 1em;
+}
+
+p, ul, ol, li, .p-font, time.blog-post-publish-date {
+  font-size: bkscale(@font-swatch5-font-size, 1);
+  line-height: bkscale(@font-swatch5-line-height, 1);
+  @media @tablet {
+    font-size: bkscale(@font-swatch5-font-size, 0.9);
+    line-height: bkscale(@font-swatch5-line-height, 0.9);
+  }
+  @media @mobile {
+    font-size: bkscale(@font-swatch5-font-size, 0.8);
+    line-height: bkscale(@font-swatch5-line-height, 0.8);
+  }
+}
