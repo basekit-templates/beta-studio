@@ -271,24 +271,61 @@ hr.rule {
 }
 
 
-// Galllery Item
+// Gallery Item
 // -------------
 
 .gallery-item {
+	position: relative;
 	width: 32%;
+	margin: 0 0 30px;
 }
 
 
 // Image Captions
 // --------------
 
+// Hide Caption
 .image-gallery__caption {
 	display: none;
 	margin: 0;
+	padding: 20px;
+	background-color: hsla(hue(@color-swatch7), saturation(@color-swatch7), lightness(@color-swatch7), 0.8); 
+}
+// Show Caption
+.image-link:hover .image-gallery__caption {
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
+// Font Styles
+.image-title {
+	display: inline-block;
+	padding-bottom: 3px;
+	border-bottom: 2px solid @color-swatch1;
+}
+.image-title,
+.image-description {
+	color: @color-swatch1;
+}
+
+// Hide Image Element
+.image-gallery__image {
+	display: none;
+}
+// Use Element Image Method
+.image-link {
+	display: block;
+	height: 280px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	&:hover {
-		display: block;
+		transition: all .2s ease-in-out;
 	}
 }
+
 
 
 
