@@ -1,0 +1,207 @@
+// --------------------------------------
+// BaseKit Standard Template: Beta Studio
+// --------------------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #LESS INCLUDES
+// 2. #PAGE SETTINGS
+// 3. #TEMPLATE STYLES
+
+
+// -----------------------------
+// 1. #LESS Includes
+// -----------------------------
+
+@import "@{templateCommon}/bkbootstrap/bk-less-framework.less"; // BaseKit LESS Framework 
+
+// ** BaseKit LESS Framework is a set of non obtrusive LESS files that can be pulled into your template
+// to guarentee widgets come to life. Proivides default styles for all widgets. Uncomment to activate.
+
+@import "@{templateLocal}/css/mixins.less"; // Template Mixins
+@import "@{templateLocal}/css/widgets.less"; // Template Widgets
+
+
+
+
+// -----------------------------
+// 2. #Page Settings
+// -----------------------------
+
+// Page Container 
+// --------------
+
+.container {
+    width: 90%;
+    margin: 0 5%;
+    @media only screen and (min-width: 1140px) {
+    	width: 960px; // 1140px - 10% for margins
+		margin: 0 auto;
+	}
+}
+
+
+// Zone Content
+// ------------
+
+.zone-content {
+	margin: 50px 0;
+}
+
+
+
+
+
+// -----------------------------
+// 3. #Template Styles
+// -----------------------------
+
+// 3.1 #HEADER
+// 3.2 #TYPOGRAPHY
+// 3.3 #FORMS
+// 3.4 #BUTTONS
+// 3.5 #IMAGES
+
+
+
+// -----------------------------
+// 3.1 #Header
+// -----------------------------
+
+// Main Header 
+// -----------
+
+header,
+.header {
+	.flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
+	min-height: 200px;
+	background-color: @color-swatch7;
+	text-align: center;
+}
+
+
+
+
+
+// -----------------------------
+// 3.2 #Typography
+// -----------------------------
+
+// Colour Swatches
+// ---------------
+
+// @color-swatch1: Background 
+// @color-swatch2: Contrast
+// @color-swatch3: Buttons
+// @color-swatch4: Headings
+// @color-swatch5: Paragraph
+// @color-swatch6: Navigation Links
+// @color-swatch7: Spare
+
+
+// Font Swatches
+// -------------
+
+// font1:  Heading 1
+// font2:  Heading 2
+// font3:  Heading 3
+// font4:  Heading 4
+// font5:  Paragraph
+// font6:  Navigation Link
+// font7:  Buttons
+// font8:  Feature Headline
+// font9:  Feature Strapline
+// font10: Company Name (Logo)
+
+
+
+// Standard Text Link
+// ------------------
+
+a { color: @color-swatch3; }
+
+
+// Blockquote
+// ----------
+
+blockquote:before {
+	font-family: georgia;
+	font-size: 44px; // Change to bkscale when TDK is fixed
+	color: darken(@color-swatch5,15%);
+}
+
+
+
+
+
+// -----------------------------
+// 3.3 #Forms
+// -----------------------------
+
+// Form
+// ----
+
+form, .form {
+	background-color: darken(@color-swatch1,5%);
+	border-bottom: 1px solid darken(@color-swatch1,8%);
+}
+
+
+// Legend
+// ------
+
+legend { 
+	width: 100%;
+	padding: 14px 30px;
+	background-color: darken(@color-swatch1,9%);
+	border-bottom: 1px solid darken(@color-swatch1,12%);
+	color: @color-swatch3;
+}
+
+
+// Form Group
+// ----------
+
+.form-group {
+	margin: 0;
+	padding: 20px 30px 0;
+	&:last-child {
+		padding-bottom: 30px;
+	}
+}
+
+
+// Inputs: Text
+// ------------
+
+.input--single-line {
+	padding: 9px 10px;
+	border: 1px solid darken(@color-swatch1,8%);
+	&:focus {
+		border-color: lighten(@color-swatch7,10%);
+		box-shadow: none;
+	}
+}
+
+
+
+
+
+// 3.5 #Images
+// -----------------------------
+
+// Image Captions
+// --------------
+
+.image-title {
+	color: @color-swatch3;
+}
+
+
+
+
+
+
+

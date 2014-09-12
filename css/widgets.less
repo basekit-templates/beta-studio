@@ -1,0 +1,298 @@
+// -----------------------------
+// Beta Studio: CSS > Widgets
+// -----------------------------
+
+// 1.  #BUTTONS
+// 1.1 #MAIN BUTTON
+// 1.2 #TWEET
+// 1.3 #DROPBOX
+
+// 2.  #COMPANY NAME
+// 3.  #NAVIGATION
+// 4.  #FEATURE
+// 5.  #TWITTER FEED
+// 6.  #DIVIDER
+// 7.  #GALLERY
+
+
+// -----------------------------
+// 1.  #Buttons
+// ----------------------------- 
+
+// 1.1 #Main Button
+// ----------------
+
+button,
+.button {
+	padding: 11px 16px;
+	&:focus {
+		outline: 0;
+	}
+}
+// Link Buttons (Padding increase)
+a.button {
+    padding: 14px 12px;
+}
+
+
+// 1.1 #Dropbox
+// ----------------
+
+
+
+
+
+// -----------------------------
+// 2. #Company Name
+// -----------------------------
+
+.company-link {
+	padding-bottom: 4px;
+	border-bottom: 3px solid @color-swatch1;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+
+
+
+// -----------------------------
+// 3. #Navigation
+// -----------------------------
+
+// Navigation Bar
+// --------------
+
+.navigation-bar {
+	background-color: @color-swatch2;
+}
+
+
+// Navigation List
+// ---------------
+
+.navigation-list {
+	min-width: 140px;
+	margin: 0;
+	background-color: @color-swatch2;
+	@media @tablet {
+		// Hidden until nav icon is clicked
+		display: none;
+		// Then these styles are applied
+		width: 100%;
+	}
+}
+
+
+// Navigation Link
+// ---------------
+.item-name {
+	padding: 16px 20px;
+}
+
+
+// Dropdown Menu
+// -------------
+
+.navigation-list--children {
+	padding: 10px 0;
+	background-color: @color-swatch1;
+	border-top: 1px solid darken(@color-swatch2,8%);
+	text-align: left; // Remove
+	.item-name {
+		padding: 6px 20px;
+	}
+}
+// Default Page
+.default-page .navigation-list--children {
+	background-color: @color-swatch2;
+}
+
+
+// Toggle Button
+// -------------
+
+.navigation-toggle {
+	// Hidden until tablet mode
+	display: none;
+	@media @tablet {
+		// Displayed at tablet
+		display: block;
+	}
+}
+
+
+
+
+
+// -----------------------------
+// 4. #Feature
+// -----------------------------
+
+// Main Feature
+// ------------
+
+.feature {
+	text-align: center;
+}
+
+
+// Feature Background (Image)
+// --------------------------
+
+.feature-widget__background-image {
+	.flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
+	min-height: 450px;
+}
+
+
+// Feature Content Wrap
+// --------------------
+
+.feature-widget__content-wrap {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+
+// Feature Content
+// ---------------
+
+.feature-widget__headline,
+.feature-widget__strapline {
+	text-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+.feature-widget__button {
+	display: inline-block;
+	margin: 20px 0 0;
+	box-shadow: 0 0 0 2px rgba(110,110,110,0.3);
+}
+
+
+
+
+
+// -----------------------------
+// 5. #Twitter Feed
+// -----------------------------
+
+// Twitter
+// -------
+
+.twitter-feed {
+	padding: 30px;
+	background-color: darken(@color-swatch1,5%);
+}
+
+
+// Tweet Item
+// ----------
+
+.tweet-item {
+	padding: 30px;
+	background-color: @color-swatch1;
+}
+
+
+// Avatar & Tweet Wrap
+// -------------------
+
+.avatar, 
+.tweet-wrap {
+	display: inline-block; // Display element inline
+	vertical-align: top;
+}
+.avatar {
+	margin-right: 20px;
+}
+
+
+// Tweet Content
+// -------------
+
+.tweet-content {
+	display: block;
+	margin: 20px 0 0;
+}
+
+
+// Account Link (Username)
+// -----------------------
+
+.account-link {
+	padding-bottom: 3px;
+	border-bottom: 2px solid @color-swatch7;
+	.paragraph; // Apply 'Paragraph' mixin 
+	color: @color-swatch7;
+	&:hover {
+		border-color: @color-swatch3;
+		color: @color-swatch3;
+		text-decoration: none;
+	}
+}
+
+
+// Tweet Metadata
+// --------------
+
+.tweet-metadata {
+	font-size: 12px;
+	color: lighten(@font-swatch5-color,10%);
+}
+
+
+
+
+
+// -----------------------------
+// 6. #Divider
+// -----------------------------
+
+hr.rule {
+	margin: 50px 0;
+}
+
+
+
+
+
+// -----------------------------
+// 7. #Gallery
+// -----------------------------
+
+.gallery-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;  	
+}
+
+
+// Galllery Item
+// -------------
+
+.gallery-item {
+	width: 32%;
+}
+
+
+// Image Captions
+// --------------
+
+.image-gallery__caption {
+	display: none;
+	margin: 0;
+	&:hover {
+		display: block;
+	}
+}
+
+
+
+
+
+
+

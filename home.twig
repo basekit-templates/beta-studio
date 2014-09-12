@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<!-- Home Page Content -->
+<section class="content">
+
+	{% include "includes/header.twig" %}
+
+	<!-- Navigation Bar -->
+	<div class="navigation-bar">
+
+		<div class="container">
+			{{widget('navigation', 'navigation', {"align":"center"})|raw}}
+		</div>
+
+	</div>
+
+	{{widget('feature', 'featurehome', {"header": "profile", "defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0','showBtn': true, "buttonText":"LOREM IPSUM"})|raw}}
+
+	<!-- Zone Content -->
+	<div class="zone-content">
+
+		<div class="container">
+			<!-- Main Widet Zone -->
+	   		{{zone('main')|raw}}	
+		</div>
+
+	</div>
+
+	<!-- End Zone Content -->
+
+   {% include "includes/footer.twig" %}
+
+</section>
+<!-- End Home Page Content -->
+
+{% endblock %}
