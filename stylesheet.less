@@ -22,6 +22,8 @@
 
 @import "@{templateLocal}/css/mixins.less"; // Template Mixins
 @import "@{templateLocal}/css/widgets.less"; // Template Widgets
+@import "@{templateLocal}/css/plugin-menu.less"; // Plugin: Menu CSS
+@import "@{templateLocal}/css/plugin-ecommerce.less"; // Plugin: Ecommerece CSS
 
 
 
@@ -57,7 +59,7 @@
 // 3. #Template Styles
 // -----------------------------
 
-// 3.1 #HEADER
+// 3.1 #HEADER & FOOTER
 // 3.2 #TYPOGRAPHY
 // 3.3 #FORMS
 // 3.4 #BUTTONS
@@ -66,16 +68,14 @@
 
 
 // -----------------------------
-// 3.1 #Header
+// 3.1 #Header & Footer
 // -----------------------------
 
-// Main Header 
-// -----------
-
-header,
-.header {
+.template-header,
+.template-footer {
 	.flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
 	min-height: 200px;
+	padding: 30px 0;
 	background-color: @color-swatch7;
 	text-align: center;
 	// Tablet: reduce height
@@ -84,6 +84,22 @@ header,
 	}
 }
 
+
+// Footer
+// ------
+
+.template-footer {
+	min-height: 100px;
+	background-color: @color-swatch3;
+	// Change heading elements to white
+	h1, h2, h3, h4 {
+		color: @color-swatch1;
+	}
+	// Lighten paragraph & link elements
+	p, a {
+		color: lighten(@color-swatch3,40%);
+	}
+}
 
 
 
@@ -119,7 +135,6 @@ header,
 // font10: Company Name (Logo)
 
 
-
 // Standard Text Link
 // ------------------
 
@@ -138,7 +153,6 @@ blockquote:before {
 
 
 
-
 // -----------------------------
 // 3.3 #Forms
 // -----------------------------
@@ -146,7 +160,8 @@ blockquote:before {
 // Form
 // ----
 
-form, .form {
+form, 
+.form {
 	background-color: darken(@color-swatch1,5%);
 	border-bottom: 1px solid darken(@color-swatch1,8%);
 }

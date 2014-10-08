@@ -14,6 +14,7 @@
 // 6.  #DIVIDER
 // 7.  #GALLERY
 // 8.  #SLIDESHOW
+// 9.  #NETWORK LINKS
 
 
 // -----------------------------
@@ -337,7 +338,7 @@ hr.rule {
 
 
 // -----------------------------
-// 7. #Slideshow
+// 8. #Slideshow
 // -----------------------------
 
 // Slideshow Layout
@@ -414,26 +415,23 @@ hr.rule {
     align-items: center;
 }
 // Prev, Next, Pause Buttons
-.previous-button, .next-button, .pause-toggle {
+.previous-button, 
+.next-button, 
+.pause-toggle {
 	width: 50px;
 	height: 50px;
 	padding: 0;
 	background-color: hsla(hue(@color-swatch3), saturation(@color-swatch3), lightness(@color-swatch3), 0.7); 
-	background-repeat: no-repeat;
-	background-position: center;
-	text-indent: -9999px;
+	font-size: 20px;
 }
-// Prev
-.previous-button {
-	background-image: image('/images/slideshow__arrow-prev.png');
-}
-// Next
-.next-button {
-	background-image: image('/images/slideshow__arrow-next.png');
-}
-// Pause
-.pause-toggle {
-
+// Prev, Next, Pause: Psuedo elements - vertically align center
+.icon--previous:before,
+.icon--next:before,
+.icon--pause:before {
+	display: table-cell;
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
 }
 
 
@@ -463,6 +461,24 @@ hr.rule {
     background-color: @color-swatch7;
 }
 
+
+
+
+// -----------------------------
+// 8.  #Network Links
+// ----------------------------- 
+
+.item-link {
+	font-size: 18px;
+	&:hover {
+		color: @color-swatch7;
+		text-decoration: none;
+	}
+}
+// Hide Network name
+.network-links__item-name {
+	display: none;
+}
 
 
 
