@@ -158,17 +158,20 @@ blockquote:before {
 // -----------------------------
 
 // Form
-// ----
+// ----------
 
 form, 
-.form {
-	background-color: darken(@color-swatch1,5%);
-	border-bottom: 1px solid darken(@color-swatch1,8%);
-}
+.form { background-color: @alt-bg-color; }
+
+// Form Body
+.form-body { margin: 30px; }
+
+// Form Group
+.form-group { margin-bottom: 20px; }
 
 
 // Legend
-// ------
+// ----------
 
 legend { 
 	width: 100%;
@@ -176,18 +179,6 @@ legend {
 	background-color: darken(@color-swatch1,9%);
 	border-bottom: 1px solid darken(@color-swatch1,12%);
 	color: @color-swatch3;
-}
-
-
-// Form Group
-// ----------
-
-.form-group {
-	margin: 0;
-	padding: 20px 30px 0;
-	&:last-child {
-		padding-bottom: 30px;
-	}
 }
 
 
@@ -202,6 +193,13 @@ legend {
 		box-shadow: none;
 	}
 }
+
+
+
+
+// -----------------------------
+// 3.4 #Buttons
+// -----------------------------
 
 
 
