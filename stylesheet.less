@@ -161,7 +161,9 @@ blockquote:before {
 // ----------
 
 form, 
-.form { background-color: @alt-bg-color; }
+.form { 
+	background-color: @alt-bg-color;
+}
 
 // Form Body
 .form-body { margin: 30px; }
@@ -185,6 +187,10 @@ legend {
 // Inputs: Text
 // ------------
 
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
 .input--single-line {
 	padding: 9px 10px;
 	border: 1px solid darken(@color-swatch1,8%);
