@@ -10,6 +10,7 @@
 // 2. #PRODUCT LIST LAYOUT
 // 3. #PRODUCT IMAGES
 // 4. #BASKET WIDGET
+// 5. #BASKET SUMMARY
 
 
 // -----------------------------
@@ -68,49 +69,10 @@ select {
 // 3. #Product Images
 // -----------------------------
 
-// Product & Basket Images **
-// --------------------------
-
-// ** Centering Techique
-
-// Surrounding image divs 
+// Adds margin to product image div
 .product-item-image,
-.basket-item-image {
-    background-color: darken(@color-swatch1,5%);
-    text-align: center; // Horizontally centers image
-    overflow: hidden; // Stops large images overflowing
-}
-// Image Element
-.product-listing__image,
-.basket__image {
-    vertical-align: middle; // Vertically centers image
-    max-width: 100%; // Allows image to fill the width or height
-    max-height: 100%;
-}
-
-// Product Images: sets width and height
-.product-item-image { 
-    width: 100%;
-    height: 200px;
+.basket-item-image { 
     margin-bottom: 20px;
-    line-height: 200px; // Line height matches div height
-    // Reduces height at tablet
-    @media @tablet {
-    	height: 100px;
-    	line-height: 100px;
-    }
-    // Brings back to orignal height at mobile
-    @media @tablet {
-    	height: 200px;
-    	line-height: 200px;
-    }
-}
-
-// Basket Images: sets width and height
-.basket-item-image {
-    width: 100px;
-    height: 100px;
-    line-height: 100px; // Line height matches div height
 }
 
 
@@ -122,8 +84,16 @@ select {
 
 // Basket Body
 .basket-body {
+    min-width: 40%;
+    width: 50%;
 	padding: 30px;
 	background-color: darken(@color-swatch1,5%);
+    @media @tablet {
+        width: 100%;
+    }
+    @media @mobile {
+        padding: 20px;
+    }
 }
 
 // Basket Item
@@ -133,18 +103,12 @@ select {
 	background-color: @bg-color;
 }
 
+// Remove BG colour on summary form
+.form.basket-summary__summary-form { background-color: transparent; }
+
 
 // Baseket Layout
 // --------------
-
-// Display basket image and content inline
-.basket-item-image,
-.basket-item-details {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 20px;
-}
-.basket-item-details { width: 70%; }
 
 
 // Remove Item Button
@@ -153,8 +117,12 @@ select {
 // Position in top-right
 .item-remove {
 	position: absolute;
-	top: 30px;
-	right: 30px;
+    top: 30px;
+    right: 30px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    font-size: 14px;
 }
 
 // Remove icon spacing
@@ -167,6 +135,46 @@ select {
     display: none;
 }
 
+
+
+
+// -----------------------------
+// 5. #Basket Summary
+// -----------------------------
+
+@media @mobile  {
+
+    // Use flexbox to display each item 100%
+    .table-row { 
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    // Increase cell width
+    .cell--image,
+    .cell--title,
+    .cell--quantity,
+    .cell--price,
+    .cell--total {
+        width: 100%;
+    }
+
+    // 
+    .basket-summary__cell:not(.basket-summary__cell:first-child) {
+        display: none;
+    }
+
+}
 
 
 

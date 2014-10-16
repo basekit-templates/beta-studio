@@ -1,0 +1,66 @@
+// ---------------------------------
+// Beta Studio: CSS > Plugin: Images
+// ---------------------------------
+
+// ------------------------------
+// Image Centering Technique
+// ------------------------------
+
+// Blog Image,
+// Product Image,
+// Basket Image
+// -------------
+
+// Surrounding image divs 
+.post-image,
+.product-item-image,
+.basket-item-image {
+    width: 100%;
+    background-color: @bg-color-alt;
+    overflow: hidden; // Stops large images overflowing
+}
+// Image Element
+.product-listing__image,
+.basket__image,
+.blog-post-list__image,
+.blog-post__image {
+    vertical-align: middle; // Vertically centers image
+    max-width: 100%; // Allows image to fill the width or height
+    max-height: 100%;
+}
+
+
+// Product Image,
+// Basket Image
+// ---------------
+
+// Sets height
+.product-item-image {
+    height: 200px;
+    line-height: 200px;
+}
+.basket-item-image {
+    height: 100px;
+    line-height: 100px;
+}
+
+// Horizontally Centers Product Images
+.product-item-image {
+	text-align: center; 
+}
+
+
+// Blog Image
+// ----------
+
+// Sets height
+.post-image {
+    height: 300px;
+    line-height: 300px; // Line height matches div height
+    // Reduces height at tablet
+    @media @tablet {
+        height: 200px;
+        line-height: 200px;
+    }
+}
+

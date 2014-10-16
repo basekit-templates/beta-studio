@@ -3,16 +3,7 @@
 // --------------------------------------
 
 // -----------------------------
-// #Table of Contents
-// -----------------------------
-
-// 1. #LESS INCLUDES
-// 2. #PAGE SETTINGS
-// 3. #TEMPLATE STYLES
-
-
-// -----------------------------
-// 1. #LESS Includes
+// LESS Includes
 // -----------------------------
 
 @import "@{templateCommon}/bkbootstrap/bk-less-framework.less"; // BaseKit LESS Framework 
@@ -20,16 +11,22 @@
 // ** BaseKit LESS Framework is a set of non obtrusive LESS files that can be pulled into your template
 // to guarentee widgets come to life. Proivides default styles for all widgets. Uncomment to activate.
 
+// Template Includes
+@import "@{templateLocal}/css/theme.less"; // Template Theme
+@import "@{templateLocal}/css/widgets.less"; // Template Widgets 
 @import "@{templateLocal}/css/mixins.less"; // Template Mixins
-@import "@{templateLocal}/css/widgets.less"; // Template Widgets
-@import "@{templateLocal}/css/plugin-menu.less"; // Plugin: Menu CSS
-@import "@{templateLocal}/css/plugin-ecommerce.less"; // Plugin: Ecommerece CSS
+
+// Plugin Includes
+@import "@{templateLocal}/css/plugins/plugin-blog.less"; // Plugin: Blog CSS
+@import "@{templateLocal}/css/plugins/plugin-menu.less"; // Plugin: Menu CSS
+@import "@{templateLocal}/css/plugins/plugin-ecommerce.less"; // Plugin: Ecommerce CSS
+@import "@{templateLocal}/css/plugins/images.less"; // Plugins: Image Alignment CSS
 
 
 
 
 // -----------------------------
-// 2. #Page Settings
+// Page Settings
 // -----------------------------
 
 // Page Container 
@@ -50,189 +47,6 @@
 
 .zone-content {
 	margin: 50px 0;
-}
-
-
-
-
-// -----------------------------
-// 3. #Template Styles
-// -----------------------------
-
-// 3.1 #HEADER & FOOTER
-// 3.2 #TYPOGRAPHY
-// 3.3 #FORMS
-// 3.4 #BUTTONS
-// 3.5 #IMAGES
-
-
-
-// -----------------------------
-// 3.1 #Header & Footer
-// -----------------------------
-
-.template-header,
-.template-footer {
-	.flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
-	min-height: 200px;
-	padding: 30px 0;
-	background-color: @color-swatch7;
-	text-align: center;
-	// Tablet: reduce height
-	@media @tablet {
-		min-height: 150px;
-	}
-}
-
-
-// Footer
-// ------
-
-.template-footer {
-	min-height: 100px;
-	background-color: @color-swatch3;
-	// Change heading elements to white
-	h1, h2, h3, h4 {
-		color: @color-swatch1;
-	}
-	// Lighten paragraph & link elements
-	p, a {
-		color: lighten(@color-swatch3,40%);
-	}
-}
-
-
-
-
-// -----------------------------
-// 3.2 #Typography
-// -----------------------------
-
-// Colour Swatches
-// ---------------
-
-// @color-swatch1: Background 
-// @color-swatch2: Contrast
-// @color-swatch3: Buttons
-// @color-swatch4: Headings
-// @color-swatch5: Paragraph
-// @color-swatch6: Navigation Links
-// @color-swatch7: Spare
-
-
-// Font Swatches
-// -------------
-
-// font1:  Heading 1
-// font2:  Heading 2
-// font3:  Heading 3
-// font4:  Heading 4
-// font5:  Paragraph
-// font6:  Navigation Link
-// font7:  Buttons
-// font8:  Feature Headline
-// font9:  Feature Strapline
-// font10: Company Name (Logo)
-
-
-// Standard Text Link
-// ------------------
-
-a { color: @color-swatch3; }
-
-
-// Blockquote
-// ----------
-
-blockquote:before {
-	font-family: georgia;
-	font-size: 44px; // Change to bkscale when TDK is fixed
-	color: darken(@color-swatch5,15%);
-}
-
-
-
-
-// -----------------------------
-// 3.3 #Forms
-// -----------------------------
-
-// Form
-// ----------
-
-form, 
-.form { 
-	background-color: @alt-bg-color;
-}
-
-// Form Body
-.form-body { margin: 30px; }
-
-// Form Group
-.form-group { margin-bottom: 20px; }
-
-
-// Legend
-// ----------
-
-legend { 
-	width: 100%;
-	padding: 14px 30px;
-	background-color: darken(@color-swatch1,9%);
-	border-bottom: 1px solid darken(@color-swatch1,12%);
-	color: @color-swatch3;
-}
-
-
-// Inputs: Text
-// ------------
-
-input[type="search"],
-input[type="email"],
-input[type="password"],
-textarea,
-.input--single-line {
-	padding: 9px 10px;
-	border: 1px solid darken(@color-swatch1,8%);
-	&:focus {
-		border-color: lighten(@color-swatch7,10%);
-		box-shadow: none;
-	}
-}
-
-
-
-
-// -----------------------------
-// 3.4 #Buttons
-// -----------------------------
-
-
-
-
-// -----------------------------
-// 3.5 #Images
-// -----------------------------
-
-// Image Captions
-// --------------
-
-// Gallery & Slideshow
-.image-title,
-.image-description {
-	color: @color-swatch1;
-	text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-	@media @tablet {
-		font-size: bkscale(@font-swatch5-font-size,50%);
-	}
-}
-
-// Image Widget
-.image-widget__caption { margin: 10px 0; }
-.image-widget__image-title,
-.image-widget__image-description {
-	color: @font-swatch5-color;
-	text-shadow: none;
 }
 
 

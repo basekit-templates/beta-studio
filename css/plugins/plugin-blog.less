@@ -1,0 +1,94 @@
+// -------------------------------
+// Beta Studio: CSS > Plugin: Blog
+// -------------------------------
+
+// -----------------------------
+// Blog Post
+// -----------------------------
+
+// Post Article
+// ------------
+
+.post-article { 
+	padding: 30px 30px 40px;
+	background-color: @bg-color-alt;
+	// Reduce padding at mobile
+	@media @mobile { 
+		padding: 20px 20px 30px;
+	}
+}
+
+
+// Post Content
+// ------------
+
+.post-content {
+	padding: 30px;
+	background-color: @bg-color;
+	@media @mobile { 
+		padding: 20px;
+	}
+}
+
+
+// Post Footer
+// -----------
+
+// Scales normal button size
+.blog-post-list__button {
+	font-size: bkscale(@font-swatch7-font-size,0.7);
+}
+// Removes icon margin at mobile
+.blog-post-list__button:before { 
+	@media @mobile {
+		margin-right: 0;
+	}
+}
+
+// Hides network name at mobile
+.blog-post-list__network-name {
+	@media @mobile {
+		display: none;
+	}
+}
+
+
+// Pagination
+// ----------
+
+.blog-post-list__pagination-button,
+.blog-post-list__next-button,
+.blog-post-list__previous-button {
+	padding: 5px 10px;
+	font-size: 14px;
+}
+
+
+// Blog Search
+// -----------
+
+// Form Group 
+.form-group.blog-search__form-group {
+	margin-bottom: 0;
+}
+
+.blog-search__form-body {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.blog-search__form-group:first-child {
+	-ms-flex: 0 11 100%;
+	-webkit-flex: 0 11 100%;
+	flex: 0 11 100%;
+	margin-right: 10px;
+}
+
+// Hide search label
+.blog-search__label { display: none; }
+
+// Search Input
+.input--search.blog-search__input { width: 100%; }
+
+

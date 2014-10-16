@@ -33,9 +33,9 @@ button,
 	}
 }
 // Link Buttons (Padding increase)
-a.button {
-    padding: 14px 12px;
-}
+// a.button {
+//     padding: 14px 12px;
+// }
 
 
 // Dropbox Button
@@ -55,6 +55,10 @@ a.button {
 	border-bottom: 3px solid @color-swatch1;
 	&:hover {
 		text-decoration: none;
+	}
+	// Remove border at mobile
+	@media @mobile {
+		border-bottom: 0;
 	}
 }
 
@@ -421,30 +425,31 @@ hr.rule {
     -ms-flex-align: center;
     align-items: center;
 }
+
 // Prev, Next, Pause Buttons
-.previous-button, 
-.next-button, 
+.slideshow__previous-button, 
+.slideshow__next-button, 
 .pause-toggle {
 	width: 50px;
 	height: 50px;
 	padding: 0;
 	background-color: hsla(hue(@color-swatch3), saturation(@color-swatch3), lightness(@color-swatch3), 0.7); 
 	font-size: 20px;
+	// Removes margin-right for icons
+	&:before { 
+		margin-right: 0;
+	}
 }
-// Prev, Next, Pause: Psuedo elements - vertically align center
-.icon--previous:before,
-.icon--next:before,
-.icon--pause:before {
-	display: table-cell;
-	vertical-align: middle;
-	width: 50px;
-	height: 50px;
+// Removes button text
+.control-text {
+	display: none;
 }
 
 
 // Pagination
 // ----------
 
+// Position list
 .slide-pagination {
 	position: absolute;
 	bottom: 20px;
@@ -452,19 +457,19 @@ hr.rule {
 }
 
 // Pagination Item
-.pagination-item {
+.slideshow__pagination-item {
 	margin: 0 4px;
 }
 
 // Pagination Button
-.pagination-item .pagination-button {
+.slideshow__pagination-item .pagination-button {
 	width: 15px;
 	height: 15px;
 	background-color: @color-swatch1;
 	border-radius: 50%;
 }
 // Selected Item
-.pagination-item.selected .pagination-button {
+.slideshow__pagination-item.selected .pagination-button {
     background-color: @color-swatch7;
 }
 
@@ -475,6 +480,7 @@ hr.rule {
 // 9.  #Network Links
 // ----------------------------- 
 
+// Item Link
 .item-link {
 	font-size: 18px;
 	&:hover {
@@ -482,8 +488,9 @@ hr.rule {
 		text-decoration: none;
 	}
 }
+
 // Hide Network name
-.network-links__item-name {
+.network-links__network-name {
 	display: none;
 }
 
@@ -494,10 +501,36 @@ hr.rule {
 // 10.  #Signup Form
 // ----------------------------- 
 
-.signup-form__form-group {
-	display: inline-block;
-	vertical-align: bottom;
+// Form Group 
+.form-group.signup-form__form-group {
+	margin-bottom: 0;
 }
+
+.signup-form__form-body {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.signup-form__form-group:first-child {
+	-ms-flex: 0 11 100%;
+	-webkit-flex: 0 11 100%;
+	flex: 0 11 100%;
+	margin-right: 10px;
+}
+
+// Hide form label
+.signup-form__label { display: none; }
+
+// Sign Up Input
+.input--search.signup-form__input { width: 100%; }
+
+
+
+
+// -----------------------------
+// 11.  #Yelp Embed
+// ----------------------------- 
 
 
 

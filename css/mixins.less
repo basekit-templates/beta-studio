@@ -3,15 +3,38 @@
 // -----------------------------
 
 
-// Colours
-// ----------
+// -----------------------------
+// Colour Variables
+// -----------------------------
 
-@bg-color: @color-swatch1;
-@alt-bg-color: darken(@color-swatch1,5%);
+// Background
+@bg-color: @color-swatch1; // Main BG
+@bg-color-alt: darken(@color-swatch1,5%); // Alt BG
+
+// Contrast Colour
+@contrast-color: @color-swatch2;
+
+// Button BG Colour 
+@button-color: @color-swatch3; 
+
+// Heading Text Colour (H1 - H4)
+@heading-color: @color-swatch4;
+
+// Paragraph Text Colour
+@paragraph-color: @color-swatch5;
+
+// Nav Link Colour
+@nav-color: @color-swatch6;
+
+// Spare Colour
+@spare-color: @color-swatch7;
 
 
+
+
+// -----------------------------
 // Flexbox: Vertical Align
-// -----------------------
+// -----------------------------
 
 .flex-vert-center {
 	display: -webkit-flexbox;
@@ -23,3 +46,5 @@
 	-webkit-align-items: center;
 	align-items: center;
 }
+
+
