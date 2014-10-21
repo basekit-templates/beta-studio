@@ -142,36 +142,38 @@ select {
 // 5. #Basket Summary
 // -----------------------------
 
+
+// Basic Cell Settings
+// -------------------
+
+// Table Cell Heading 
+.cell--header.basket-summary__cell {
+    background-color: darken(@bg-color,2%);
+}
+
+// Table Cell
+.basket-summary__cell { 
+    border: 1px solid darken(@bg-color-alt,7%);
+}
+
+
+// Table at mobile
+// ---------------
+
 @media @mobile  {
 
-    // Use flexbox to display each item 100%
-    .table-row { 
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-direction: normal;
-        -moz-box-direction: normal;
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
+    // Remove cell border
+    .basket-summary__cell { border: 0; }
+
+    // Give odd table rows a BG colour
+    .basket-summary__table-row:nth-child(odd) {
+        background-color: darken(@bg-color,2%);
     }
 
-    // Increase cell width
-    .cell--image,
-    .cell--title,
-    .cell--quantity,
-    .cell--price,
-    .cell--total {
-        width: 100%;
-    }
-
-    // 
-    .basket-summary__cell:not(.basket-summary__cell:first-child) {
-        display: none;
+    // Add border-top to 'price' and 'total' cells
+    .cell--price.basket-summary__cell,
+    .cell--total.basket-summary__cell {
+        border-top: 1px solid darken(@bg-color-alt,7%);
     }
 
 }
