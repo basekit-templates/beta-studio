@@ -1,0 +1,135 @@
+// -----------------------------
+// Beta Studio: CSS > Navigation
+// -----------------------------
+
+// Navigation Bar
+// --------------
+
+.navigation-bar {
+	background-color: @color-swatch2;
+}
+
+
+// Navigation List
+// ---------------
+
+.navigation-list {
+	min-width: 140px;
+	margin: 0;
+}
+
+
+// Navigation Item
+// ---------------
+
+.navigation-item {
+	@media @tablet {
+		width: 100%;
+	}
+}
+
+// Navigation Link
+.item-name {
+	padding: 16px 20px;
+}
+
+
+// Dropdown Menu
+// -------------
+
+.navigation-list--children {
+	padding: 10px 0;
+	background-color: @color-swatch1;
+	border-top: 1px solid darken(@color-swatch2,8%);
+	.item-name {
+		padding: 6px 20px;
+	}
+}
+// Default Page
+.default-page .navigation-list--children {
+	background-color: @color-swatch2;
+}
+
+
+// Toggle Button
+// -------------
+
+// Navigation Toggle Button
+.navigation-toggle {
+  display: none; // will be revealed on small screen
+  width: 28px;
+  height: 30px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-indent: 100%;
+  overflow: hidden;
+  line-height: 0;
+  outline: 0;
+  // Toggle Button Closed State
+  .bar {
+    width: 100%;
+    height: 5px;
+    background: red;
+    margin: 4px 0;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+  }
+}
+// Toggle Button Open State
+.widget__navigation.open .bar {
+  &.one {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &.two {
+    opacity: 0;
+  }
+  &.three {
+    transform: rotate(-45deg) translate(7px, -8px);
+  }
+}
+
+// Only happens on small screen
+@media @tablet {
+  .navigation-toggle {
+    display: block;
+  }
+  
+  // Renders invisible nav for JS measurements
+  .navigation-body {
+     visibility: hidden;
+     
+  }
+  
+  // Hides nav using 0 height method
+  .widget__navigation.ready {
+    .navigation-body {
+      visibility: visible;
+      // Hides nav using 0 height
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+
+// Folder item
+.widget__navigation.ready {
+  li.navigation-item--parent {
+    cursor: pointer;
+    .navigation-list--children {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+    }
+    &:hover .navigation-list--children{
+      max-height: 999px;
+    }
+  }
+ }
+
+
+
+
+

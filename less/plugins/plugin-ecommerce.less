@@ -6,43 +6,97 @@
 // #Table of Contents
 // -----------------------------
 
-// 1. #PRODUCT FILTERS 
-// 2. #PRODUCT LIST LAYOUT
+// 1. #SINGLE PRODUCT
+// 2. #PRODUCT LIST
 // 3. #PRODUCT IMAGES
 // 4. #BASKET WIDGET
 // 5. #BASKET SUMMARY
 
 
 // -----------------------------
-// 1. #Product Filters
+// 1. #Single Product
 // -----------------------------
 
-select {
-	height: 36px;
-	outline: none;
-	border: 1px solid darken(@color-swatch1,15%);
-	border-radius: 0;
-	background-color: @color-swatch1;
-	text-indent: 0;
-	&:hover, &:focus {
-		background-color: @color-swatch1;
-		cursor: pointer;
-	}
-}
-
-// Filter Submit Button
-.product-listing__input {
-	padding: 4px 12px;
-	font-size: 16px;
-	line-height: inherit;
-	letter-spacing: inherit;
+// Display images and content inline
+.product-images,
+.product-content {
+    display: inline-block;
+    vertical-align: top;
 }
 
 
+// Product Images
+// --------------
+
+.product-images {
+    width: 45%;
+    margin-right: 3%;
+    @media @tablet {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+// Product Content
+// ---------------
+
+.product-content {
+    width: 51%;
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+// Product Details
+.product-title { font-size: bkscale(@font-swatch1-font-size,0.8); }
+.product-description { font-size: bkscale(@font-swatch5-font-size,0.9); }
+.product-price { color: @color-swatch3; }
+
+
+// Product Form
+// ------------
+
+.product__form      { 
+    margin-top: 20px;
+    background-color: transparent;
+}
+.product__form-body { margin: 0; }
+
+// Reset legend styles
+.product__legend {
+    padding: 0 0 10px;
+    background-color: transparent;
+    border: 0;
+}
+
+// Form Select
+.product__select { min-width: 150px; }
+
+// Add to Basket,
+// View Basket Buttonss
+.button--submit.product__input,
+.product__button {
+    min-width: 150px;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+// Product Tags
+.tag-item {
+    margin-right: -4px;
+}
+.tag-item:first-child:before {
+    display: none;
+}
+.tag-item:before { 
+    content: ',';
+}
 
 
 // -----------------------------
-// 2. #Product List Layout
+// 2. #Product List
 // -----------------------------
 
 // Product List
@@ -63,6 +117,33 @@ select {
         margin-bottom: 4%;
     }
 }
+
+
+// Product Filters
+// ---------------
+
+.product-listing__form-group,
+.product-listing__select {
+    @media @mobile {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+// Filtert Search Input
+.input--search.product-listing__input {
+    padding: 0;
+    font-size: 12px;
+    text-indent: 10px;
+}
+
+// Filter Submit Button
+.button--submit.product-listing__input {
+    padding: 4px 12px;
+    font-size: 16px;
+}
+
+
 
 
 // -----------------------------
@@ -157,8 +238,8 @@ select {
 }
 
 
-// Table at mobile
-// ---------------
+// Summary Table at mobile
+// -----------------------
 
 @media @mobile  {
 
@@ -177,13 +258,5 @@ select {
     }
 
 }
-
-
-
-
-
-
-
-
 
 

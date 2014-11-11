@@ -34,10 +34,6 @@
 // Post Footer
 // -----------
 
-// Scales normal button size
-.blog-post-list__button {
-	font-size: bkscale(@font-swatch7-font-size,0.7);
-}
 // Removes icon margin at mobile
 .blog-post-list__button:before { 
 	@media @mobile {
@@ -50,17 +46,6 @@
 	@media @mobile {
 		display: none;
 	}
-}
-
-
-// Pagination
-// ----------
-
-.blog-post-list__pagination-button,
-.blog-post-list__next-button,
-.blog-post-list__previous-button {
-	padding: 5px 10px;
-	font-size: 14px;
 }
 
 
@@ -90,5 +75,15 @@
 
 // Search Input
 .input--search.blog-search__input { width: 100%; }
+
+
+// Sharing Buttons
+// ---------------
+
+.blog-post__button,
+.blog-post-list__button { 
+	padding: 8px 10px;
+	font-size: 14px;
+}
 
 

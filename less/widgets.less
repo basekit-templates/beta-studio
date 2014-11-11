@@ -6,48 +6,43 @@
 // #Table of Contents
 // -----------------------------
 
-//  1.  #BUTTONS
-//  2.  #COMPANY NAME
-//  3.  #NAVIGATION
-//  4.  #FEATURE
-//  5.  #TWITTER FEED
-//  6.  #DIVIDER
-//  7.  #GALLERY
-//  8.  #SLIDESHOW
-//  9.  #NETWORK LINKS
-// 10.  #SIGNUP FORM
+//  1.   #LOGO
+//  2.   #COMPANY NAME
+//  3.   #NAVIGATION
+//  4.   #FEATURE
+
+//  5.   #IMAGES
+//  6.   #GALLERY
+//  7.   #SLIDESHOW
+
+//  8.   #BUTTONS
+//  8.1  -- #STANDARD
+//  8.2  -- #TWEET
+//  8.3  -- #DROPBOX
+//  8.4  -- #CLICK TO CALL
+//  8.5  -- #PAYPAL
+
+//  9.   #CONTACT FORM
+// 10.   #SIGNUP FORM
+
+// 11.   #SOCIAL ICONS
+// 12.   #TWITTER FEED
+
+// 13.   #DIVIDER (KEYLINE)
+// 14.   #PROFILE
 
 
 // -----------------------------
-// 1.  #Buttons
-// ----------------------------- 
+// 1.  #Logo
+// -----------------------------
 
-// Main Button
-// -----------
-
-button,
-.button {
-	padding: 11px 16px;
-	&:focus {
-		outline: 0;
-	}
-}
-// Link Buttons (Padding increase)
-// a.button {
-//     padding: 14px 12px;
-// }
-
-
-// Dropbox Button
-// --------------
-
-.dropbox-button__button { margin-right: 10px; }
+// No styles
 
 
 
 
 // -----------------------------
-// 2. #Company Name
+// 2.  #Company Name
 // -----------------------------
 
 .company-link {
@@ -64,78 +59,17 @@ button,
 
 
 
-
 // -----------------------------
-// 3. #Navigation
+// 3.  #Navigation
 // -----------------------------
 
-// Navigation Bar
-// --------------
-
-.navigation-bar {
-	background-color: @color-swatch2;
-}
-
-
-// Navigation List
-// ---------------
-
-.navigation-list {
-	min-width: 140px;
-	margin: 0;
-	background-color: @color-swatch2;
-	@media @tablet {
-		// Hidden until nav icon is clicked
-		display: none;
-		// Then these styles are applied
-		width: 100%;
-	}
-}
-
-
-// Navigation Link
-// ---------------
-
-.item-name {
-	padding: 16px 20px;
-}
-
-
-// Dropdown Menu
-// -------------
-
-.navigation-list--children {
-	padding: 10px 0;
-	background-color: @color-swatch1;
-	border-top: 1px solid darken(@color-swatch2,8%);
-	text-align: left; // Remove
-	.item-name {
-		padding: 6px 20px;
-	}
-}
-// Default Page
-.default-page .navigation-list--children {
-	background-color: @color-swatch2;
-}
-
-
-// Toggle Button
-// -------------
-
-.navigation-toggle {
-	// Hidden until tablet mode
-	display: none;
-	@media @tablet {
-		// Displayed at tablet
-		display: block;
-	}
-}
+// See 'navigation.less'
 
 
 
 
 // -----------------------------
-// 4. #Feature
+// 4.  #Feature
 // -----------------------------
 
 // Main Feature
@@ -182,106 +116,41 @@ button,
 
 
 
-
 // -----------------------------
-// 5. #Twitter Feed
+// 5.  #Images
 // -----------------------------
 
-// Twitter
-// -------
-
-.twitter-feed {
-	padding: 30px;
-	background-color: darken(@color-swatch1,5%);
-}
-
-
-// Tweet Item
-// ----------
-
-.tweet-item {
-	padding: 30px;
-	background-color: @color-swatch1;
-}
-
-
-// Avatar & Tweet Wrap
-// -------------------
-
-.avatar, 
-.tweet-wrap {
-	display: inline-block; // Display element inline
-	vertical-align: top;
-}
-.avatar {
-	margin-right: 20px;
-}
-
-
-// Tweet Content
-// -------------
-
-.tweet-content {
-	display: block;
-	margin: 20px 0 0;
-}
-
-
-// Account Link (Username)
-// -----------------------
-
-.account-link {
-	padding-bottom: 3px;
-	border-bottom: 2px solid @color-swatch7;
-	.paragraph; // Apply 'Paragraph' mixin 
-	color: @color-swatch7;
-	&:hover {
-		border-color: @color-swatch3;
-		color: @color-swatch3;
-		text-decoration: none;
-	}
-}
-
-
-// Tweet Metadata
-// --------------
-
-.tweet-metadata {
-	font-size: 12px;
-	color: lighten(@font-swatch5-color,10%);
-}
-
+// No styles 
 
 
 
 
 // -----------------------------
-// 6. #Divider
-// -----------------------------
-
-hr.rule {
-	margin: 50px 0;
-}
-
-
-
-
-// -----------------------------
-// 7. #Gallery
+// 6.  #Gallery
 // -----------------------------
 
 // Gallery Layout
 // --------------
 
 // Gallery List
-.gallery-list {
+.image-gallery__gallery-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    justify-content: space-between;     
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; 
 }
 
 // Gallery Item
-.gallery-item {
+.image-gallery__gallery-item {
     position: relative;
     width: 32%;
     margin-bottom: 2%;
@@ -305,9 +174,6 @@ hr.rule {
     background-size: cover;
     @media @tablet {
         height: 210px;
-    }
-    &:hover {
-        transition: all .2s ease-in-out;
     }
 }
 
@@ -349,7 +215,7 @@ hr.rule {
 
 
 // -----------------------------
-// 8. #Slideshow
+// 7.  #Slideshow
 // -----------------------------
 
 // Slideshow Layout
@@ -384,6 +250,11 @@ hr.rule {
     bottom: 0;
     width: 100%;
     padding: 20px;
+}
+
+.slideshow__image-title,
+.slideshow__image-description {
+	width: 80%;
 }
 
 
@@ -441,7 +312,7 @@ hr.rule {
 	}
 }
 // Removes button text
-.control-text {
+.slideshow__control-text {
 	display: none;
 }
 
@@ -462,14 +333,14 @@ hr.rule {
 }
 
 // Pagination Button
-.slideshow__pagination-item .pagination-button {
+.slideshow__button {
 	width: 15px;
 	height: 15px;
 	background-color: @color-swatch1;
 	border-radius: 50%;
 }
 // Selected Item
-.slideshow__pagination-item.selected .pagination-button {
+.slideshow__pagination-item.selected .slideshow__button {
     background-color: @color-swatch7;
 }
 
@@ -477,29 +348,59 @@ hr.rule {
 
 
 // -----------------------------
-// 9.  #Network Links
-// ----------------------------- 
+// 8.  #Buttons
+// -----------------------------
 
-// Item Link
-.item-link {
-	font-size: 18px;
-	&:hover {
-		color: @color-swatch7;
-		text-decoration: none;
+//  8.1  #STANDARD
+//  --------------
+
+button,
+.button {
+	padding: 11px 16px;
+	&:focus {
+		outline: 0;
 	}
 }
 
-// Hide Network name
-.network-links__network-name {
-	display: none;
-}
+
+//  8.2  #TWEET
+//  --------------
+
+
+//  8.3  #STANDARD
+//  --------------
+
+
+//  8.4  #DROPBOX
+//  --------------
+
+.dropbox-button__button { margin-right: 10px; }
+
+
+//  8.5  #CLICK TO CALL
+//  --------------
+
+
+//  8.5  #PAYPAL
+//  --------------
+
+
+
+
+
+
+// -----------------------------
+// 9.  #Contact Form
+// -----------------------------
+
+// No styles
 
 
 
 
 // -----------------------------
 // 10.  #Signup Form
-// ----------------------------- 
+// -----------------------------
 
 // Form Group 
 .form-group.signup-form__form-group {
@@ -529,8 +430,145 @@ hr.rule {
 
 
 // -----------------------------
-// 11.  #Yelp Embed
-// ----------------------------- 
+// 11.  #Social Icons
+// -----------------------------
+
+// Item Link
+.social-link {
+	font-size: 18px;
+	&:hover {
+		color: @color-swatch7;
+		text-decoration: none;
+	}
+}
+
+// Hide Social name
+.social-icons__social-name {
+	display: none;
+}
+
+
+
+
+// -----------------------------
+// 12.  #Twitter Feed
+// -----------------------------
+
+// Twitter
+// -------
+
+.twitter-feed {
+	padding: 30px;
+	background-color: darken(@color-swatch1,5%);
+	@media @mobile {
+		padding: 20px;
+	}
+}
+
+
+// Tweet Item
+// ----------
+
+.tweet-item {
+	padding: 30px;
+	background-color: @color-swatch1;
+	@media @mobile {
+		padding: 20px;
+	}
+}
+
+
+// Avatar & Tweet Wrap
+// -------------------
+
+// Avatar
+.avatar {
+	width: 15%;
+	margin-right: 3%;
+	margin-bottom: 3%;
+}
+// Tweet Wrap
+.tweet-wrap {
+	width: 81%;
+}
+
+// Both
+.avatar, 
+.tweet-wrap {
+	display: inline-block; // Display element inline
+	vertical-align: top;
+	@media @mobile {
+		width: 100%;
+		margin-right: 0;	
+	}
+}
+
+
+// Tweet Content
+// -------------
+
+.tweet-content {
+	display: block;
+	margin: 20px 0 0;
+}
+
+
+// Account Link (Username)
+// -----------------------
+
+.account-link {
+	padding-bottom: 3px;
+	border-bottom: 2px solid @color-swatch7;
+	.paragraph; // Apply 'Paragraph' mixin 
+	color: @color-swatch7;
+	&:hover {
+		border-color: @color-swatch3;
+		color: @color-swatch3;
+		text-decoration: none;
+	}
+}
+
+
+// Tweet Metadata
+// --------------
+
+.tweet-metadata {
+	font-size: 12px;
+	color: lighten(@font-swatch5-color,10%);
+}
+
+
+
+
+// -----------------------------
+// 13.  #Divider (Keyline)
+// -----------------------------
+
+hr.rule {
+    background-color: darken(@bg-color-alt,5%); 
+}
+
+
+
+
+// -----------------------------
+// 14. #Profile
+// -----------------------------
+
+// Reset Twitter feed styles
+.twitter-feed--profile {
+	padding: 0;
+	background-color: transparent;
+	.tweet-item {
+		padding: 0;
+	}
+	.avatar { 
+		display: none;
+	}
+}
+
+
+
 
 
 

@@ -41,6 +41,11 @@
 	p, a {
 		color: lighten(@button-color,40%);
 	}
+	// Reset Twitter feed styles
+	.twitter-feed {
+		padding: 0;
+		background-color: transparent;
+	}
 }
 
 
@@ -80,16 +85,16 @@
 // Standard Text Link
 // ------------------
 
-a { color: @button-color; }
+a { color: @link-color; }
 
 
 // Blockquote
 // ----------
 
 blockquote:before {
-	font-family: georgia;
-	font-size: 44px; // Change to bkscale when TDK is fixed
-	color: darken(@color-swatch5,15%);
+	margin-right: 10px;
+	font-size: 32px;
+	color: @color-swatch3;
 }
 
 
@@ -138,6 +143,23 @@ legend {
 	}
 }
 
+// Select
+// ----------
+
+select {
+    height: 36px;
+    outline: none;
+    border: 1px solid darken(@color-swatch1,10%);
+    border-radius: 0;
+    background-color: @color-swatch1;
+    font-size: 12px;
+    text-indent: 0;
+    &:hover, &:focus {
+        background-color: @color-swatch1;
+        cursor: pointer;
+	}
+}
+
 
 // Inputs: Text
 // ------------
@@ -147,7 +169,7 @@ input[type="email"],
 input[type="password"],
 textarea,
 .input--single-line {
-	padding: 9px 10px;
+	padding: 14px 10px;
 	border: 1px solid darken(@color-swatch1,8%);
 	&:focus {
 		border-color: lighten(@color-swatch7,10%);
