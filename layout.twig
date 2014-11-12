@@ -18,7 +18,22 @@
 	<script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
 
 	<!-- Nav Menu Script -->
-	<script src="{{ asset('js/navigation.js')}}"></script>
+	<script>
+		// Adds 3 empty DIVs for creating the hamburger icon 
+    	$( ".navigation-toggle" ).append( "<div class='bar one'></div><div class='bar two'></div><div class='bar three'></div>" ); 
+
+    	// Toggles class open to display/hide the whole navigation
+    	$( ".navigation-toggle" ).click(function() {
+  			$( ".bk-navigation" ).toggleClass( "open" );
+		});
+
+    	// Togglse class open to display/hide folders
+		$( ".navigation-item.folder" ).each(function() {
+			$( this ).click(function() {
+	  			$( this ).toggleClass( "open" );
+			});	
+		});
+	</script>
 
 </body>
 

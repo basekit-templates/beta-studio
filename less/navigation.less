@@ -19,117 +19,130 @@
 }
 
 
+// Default Page
+.default-page .navigation-list--children {
+	background-color: @color-swatch2;
+}
+
 // Navigation Item
 // ---------------
 
 .navigation-item {
 	@media @tablet {
 		width: 100%;
+		border-top: 1px solid darken(@color-swatch2,8%);
 	}
 }
+
 
 // Navigation Link
 .item-name {
 	padding: 16px 20px;
 }
 
-
 // Dropdown Menu
 // -------------
 
-.navigation-list--children {
-	padding: 10px 0;
-	background-color: @color-swatch1;
-	border-top: 1px solid darken(@color-swatch2,8%);
-	.item-name {
-		padding: 6px 20px;
+.item-name--parent {
+	&:after {
+		font-family: 'FontAwesome', sans-serif;
+		content: "\f107";
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 0.8em;
+		-webkit-transition: all 0.2s ease;
+		-moz-transition: all 0.2s ease;
+		-o-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		@media @tablet {
+			content: "\f054";
+			font-size: 0.8em;
+		}
+		.navigation-item.open & {
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
 	}
 }
-// Default Page
-.default-page .navigation-list--children {
-	background-color: @color-swatch2;
+
+.navigation-list--children, .default-page .navigation-list--children {
+	border-top: 1px solid darken(@color-swatch2,8%);
+	@media @tablet {
+		border-top: none;
+		background-color: @color-swatch1;
+		position: relative;
+		top: 0;
+		background-color: darken(@color-swatch2, 2%);
+		.navigation-item:hover & {
+			display: none;
+		}
+		.navigation-item.open & {
+			display: block;
+		}
+	}
 }
 
+
+// Collapsible navigation
+// -------------
+
+@media @tablet {
+	.navigation-toggle {
+		display: block;
+	}
+	.navigation-body {
+		display: none;
+		.open & {
+			display: block;
+		} 
+	}
+}
 
 // Toggle Button
 // -------------
 
 // Navigation Toggle Button
 .navigation-toggle {
-  display: none; // will be revealed on small screen
-  width: 28px;
-  height: 30px;
-  cursor: pointer;
-  padding: 0;
-  border: none;
-  background: transparent;
-  text-indent: 100%;
-  overflow: hidden;
-  line-height: 0;
-  outline: 0;
-  // Toggle Button Closed State
-  .bar {
-    width: 100%;
-    height: 5px;
-    background: red;
-    margin: 4px 0;
-    transition: all 0.3s;
-    backface-visibility: hidden;
-  }
+	display: none;
+	@media @tablet {
+		display: block;
+		width: 28px;
+		height: 40px;
+		cursor: pointer;
+		padding: 5px 0;
+		border: none;
+		background: transparent;
+		text-indent: 100%;
+		overflow: hidden;
+		line-height: 0;
+		outline: 0;
+		margin: 0 auto;
+		&:hover {
+			background-color: transparent;
+		}
+		// Toggle Button Closed State
+		.bar {
+			width: 100%;
+			height: 4px;
+			background: @color-swatch7;
+			margin: 4px 0;
+			transition: all 0.3s;
+			backface-visibility: hidden;
+			// Toggle Button Open State
+			.open & {
+				&.one {
+					transform: rotate(45deg) translate(4px, 4px);
+				}
+				&.two {
+					opacity: 0;
+				}
+				&.three {
+					transform: rotate(-45deg) translate(6.5px,-7.5px);
+				}
+			}
+		}
+	}
 }
-// Toggle Button Open State
-.widget__navigation.open .bar {
-  &.one {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  &.two {
-    opacity: 0;
-  }
-  &.three {
-    transform: rotate(-45deg) translate(7px, -8px);
-  }
-}
-
-// Only happens on small screen
-@media @tablet {
-  .navigation-toggle {
-    display: block;
-  }
-  
-  // Renders invisible nav for JS measurements
-  .navigation-body {
-     visibility: hidden;
-     
-  }
-  
-  // Hides nav using 0 height method
-  .widget__navigation.ready {
-    .navigation-body {
-      visibility: visible;
-      // Hides nav using 0 height
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease-out;
-    }
-  }
-}
-
-// Folder item
-.widget__navigation.ready {
-  li.navigation-item--parent {
-    cursor: pointer;
-    .navigation-list--children {
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease-out;
-    }
-    &:hover .navigation-list--children{
-      max-height: 999px;
-    }
-  }
- }
-
-
-
-
-
