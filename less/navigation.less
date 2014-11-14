@@ -42,8 +42,11 @@
 
 // Dropdown Menu
 // -------------
-
+.navigation-item.folder {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 .item-name--parent {
+
 	&:after {
 		font-family: 'FontAwesome', sans-serif;
 		content: "\f107";
@@ -122,6 +125,7 @@
 		line-height: 0;
 		outline: 0;
 		margin: 0 auto;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
 		&:hover {
 			background-color: transparent;
 		}
