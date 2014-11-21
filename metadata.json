@@ -107,7 +107,9 @@
             "line-height": "28px",
             "color": "@color-swatch6",
             "color-hover": "darken(@color-swatch6,8%)",
-            "letter-spacing": "inherit"
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3,8%)"
         },
         "font7": {
             "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
