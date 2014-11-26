@@ -83,7 +83,8 @@
 .widget input[type="text"],
 .widget input[type="email"],
 .productlist-filter .productlist-search input,
-.signupform fieldset input {
+.signupform fieldset input
+ {
 	background-color: @color-swatch1;
 	border-radius: 0;
 	padding: 0 1em;
@@ -95,6 +96,7 @@
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
     border: none;
+    -webkit-appearance: none;
 
 	@media only screen and (max-width : 460px) {
 		font-size: bkscale(@font-swatch7-font-size, 0.75);
