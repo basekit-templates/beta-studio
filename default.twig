@@ -7,6 +7,7 @@
 <header class="bk-header">
     <div class="header-bg">
          <div class="wrapper companyheader clearfix">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
             {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
 
         </div>
