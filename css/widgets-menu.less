@@ -310,8 +310,11 @@
 				.menu-item {
 					display: inline-block;
 					vertical-align: top;
+					min-width: 100%;
+
 					@media @tablet {
 						display: block;
+						min-width: 0;
 					}
 					// Title
 					.menu-item-name {
