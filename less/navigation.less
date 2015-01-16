@@ -24,6 +24,7 @@
 	background-color: @color-swatch2;
 }
 
+
 // Navigation Item
 // ---------------
 
@@ -40,13 +41,14 @@
 	padding: 16px 20px;
 }
 
+
 // Dropdown Menu
 // -------------
+
 .navigation-item.folder {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .item-name--parent {
-
 	&:after {
 		font-family: 'FontAwesome', sans-serif;
 		content: "\f107";
@@ -102,7 +104,7 @@
 		display: none;
 		.open & {
 			display: block;
-		} 
+		}
 	}
 }
 
@@ -129,34 +131,39 @@
 		&:hover {
 			background-color: transparent;
 		}
-		// Toggle Button Closed State
-		.bar {
-			width: 100%;
-			height: 4px;
-			background: @color-swatch7;
-			margin: 4px 0;
-			transition: all 0.3s;
-			backface-visibility: hidden;
-			// Toggle Button Open State
-			.open & {
-				&.one {
-					-webkit-transform:  rotate(45deg) translate(4px, 4px);
-					-moz-transform:  rotate(45deg) translate(4px, 4px);
-					-o-transform:  rotate(45deg) translate(4px, 4px);
-					-ms-transform:  rotate(45deg) translate(4px, 4px);
-					transform:  rotate(45deg) translate(4px, 4px);
-				}
-				&.two {
-					opacity: 0;
-				}
-				&.three {
-					-webkit-transform:  rotate(-45deg) translate(6.5px,-7.5px);
-					-moz-transform:  rotate(-45deg) translate(6.5px,-7.5px);
-					-o-transform:  rotate(-45deg) translate(6.5px,-7.5px);
-					-ms-transform:  rotate(-45deg) translate(6.5px,-7.5px);
-					transform:  rotate(-45deg) translate(6.5px,-7.5px);
-				}
-			}
-		}
+	}
+}
+
+
+// Bars
+// ----------
+
+// Toggle Button Closed State
+.bar {
+	width: 100%;
+	height: 4px;
+	background: @color-swatch7;
+	margin: 4px 0;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+// Toggle Button Open State
+.open & {
+	&.one {
+		-webkit-transform:  rotate(45deg) translate(4px, 4px);
+		-moz-transform:  rotate(45deg) translate(4px, 4px);
+		-o-transform:  rotate(45deg) translate(4px, 4px);
+		-ms-transform:  rotate(45deg) translate(4px, 4px);
+		transform:  rotate(45deg) translate(4px, 4px);
+	}
+	&.two {
+		opacity: 0;
+	}
+	&.three {
+		-webkit-transform:  rotate(-45deg) translate(6.5px,-7.5px);
+		-moz-transform:  rotate(-45deg) translate(6.5px,-7.5px);
+		-o-transform:  rotate(-45deg) translate(6.5px,-7.5px);
+		-ms-transform:  rotate(-45deg) translate(6.5px,-7.5px);
+		transform:  rotate(-45deg) translate(6.5px,-7.5px);
 	}
 }
