@@ -1,10 +1,10 @@
 {
+    "widgetVersion": 2,
     "name":"Beta Studio",
     "thumbnail":"thumbnail.png",
     "screenshot":"thumbnail.png",
     "templateType":"standard",
     "pageTypes": ["home"],
-    "widgetVersion": 2,
     "tags": {
     "en": ["minimal", "clean", "floral", "modern", "creative", "typography", "simple", "contemporary", "flexible", "florist", "studio", "portfolio", "designer", "sans-serif"],
     "es": ["minimalista", "limpio", "decorativo", "moderno", "creativo", "tipográfico", "simple", "contemporaneo", "flexible", "florista", "estudio", "portafolio", "diseñador", "sans-serif"],

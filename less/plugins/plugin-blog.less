@@ -2,18 +2,39 @@
 // Beta Studio: CSS > Plugin: Blog
 // -------------------------------
 
+
 // -----------------------------
-// Blog Post
+// #Blog Post List
+// -----------------------------
+
+.blogpostlist__pagination-item {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+
+// Sharing Buttons
+// ---------------
+
+.blogpost__button,
+.blogpost-list__button {
+	padding: 6px 10px;
+	font-size: 14px;
+}
+
+
+// -----------------------------
+// #Blog Post
 // -----------------------------
 
 // Post Article
 // ------------
 
-.post-article { 
+.post-article {
 	padding: 30px 30px 40px;
 	background-color: @bg-color-alt;
 	// Reduce padding at mobile
-	@media @mobile { 
+	@media @mobile {
 		padding: 20px 20px 30px;
 	}
 }
@@ -23,9 +44,10 @@
 // ------------
 
 .post-content {
+	margin: 20px 0;
 	padding: 30px;
 	background-color: @bg-color;
-	@media @mobile { 
+	@media @mobile {
 		padding: 20px;
 	}
 }
@@ -35,14 +57,14 @@
 // -----------
 
 // Removes icon margin at mobile
-.blog-post-list__button:before { 
+.blogpost-list__button:before {
 	@media @mobile {
 		margin-right: 0;
 	}
 }
 
 // Hides network name at mobile
-.blog-post-list__network-name {
+.blogpost-list__network-name {
 	@media @mobile {
 		display: none;
 	}
@@ -52,7 +74,7 @@
 // Blog Search
 // -----------
 
-// Form Group 
+// Form Group
 .form-group.blog-search__form-group {
 	margin-bottom: 0;
 }
@@ -75,15 +97,5 @@
 
 // Search Input
 .input--search.blog-search__input { width: 100%; }
-
-
-// Sharing Buttons
-// ---------------
-
-.blog-post__button,
-.blog-post-list__button { 
-	padding: 8px 10px;
-	font-size: 14px;
-}
 
 

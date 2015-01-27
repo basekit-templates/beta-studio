@@ -14,9 +14,9 @@
 // Contrast Colour
 @contrast-color: @color-swatch2;
 
-// Button BG Colour 
-@button-color: @color-swatch3; 
-@link-color: @color-swatch3; 
+// Button BG Colour
+@button-color: @color-swatch3;
+@link-color: @color-swatch3;
 
 // Heading Text Colour (H1 - H4)
 @heading-color: @color-swatch4;
@@ -46,6 +46,13 @@
 	-ms-flex-align: center;
 	-webkit-align-items: center;
 	align-items: center;
+}
+
+.transition(@duration, @ease:ease-out) {
+	-webkit-transition: all @duration @ease;
+	-moz-transition:    all @duration @ease;
+	-o-transition:      all @duration @ease;
+	transition:         all @duration @ease;
 }
 
 

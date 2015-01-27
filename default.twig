@@ -3,9 +3,9 @@
 {% block content %}
 
 <!-- Default Page Content -->
-<section class="content">
+<div class="content">
 
-	<section class="default-page">
+	<div class="default-page">
 
 		{% include "includes/header.twig" %}
 
@@ -14,7 +14,6 @@
 
 			<div class="container">
 				{{widget('extendednavigation', 'navigation', {"align":"center"})|raw}}
-				{{widget('ecombasket', 'ecombasket', {})|raw}}
 			</div>
 
 		</div>
@@ -24,7 +23,7 @@
 
 			<div class="container">
 				<!-- Main Widet Zone -->
-		   		{{zone('main')|raw}}	
+		   		{{zone('main')|raw}}
 			</div>
 
 		</div>
@@ -33,9 +32,9 @@
 
 	   {% include "includes/footer.twig" %}
 
-	</section>
+	</div>
 
 <!-- End Default Page Content -->
-</section>
+</div>
 
 {% endblock %}

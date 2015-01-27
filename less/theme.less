@@ -1,12 +1,19 @@
-// ---------------------------------
-// Beta Studio: CSS > Template Theme
-// ---------------------------------
+// -----------------------------
+// Beta Studio: CSS > theme.less
+// -----------------------------
 
-// 1. #HEADER & FOOTER
-// 2. #TYPOGRAPHY
-// 3. #FORMS
-// 4. #BUTTONS
-// 5. #IMAGES
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #Header & Footer
+// 2. #Typography
+// 3. #Forms
+// 4. #Buttons
+// 5. #Images
+
+
 
 
 // -----------------------------
@@ -16,22 +23,20 @@
 .template-header,
 .template-footer {
 	.flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
-	min-height: 200px;
-	padding: 30px 0;
+	padding: 60px 0;
 	background-color: @spare-color;
 	text-align: center;
 	// Tablet: reduce height
 	@media @tablet {
-		min-height: 150px;
+		padding: 40px 0;
 	}
 }
 
 
 // Footer
-// ------
+// ----------
 
 .template-footer {
-	min-height: 100px;
 	background-color: @button-color;
 	// Change heading elements to white
 	h1, h2, h3, h4 {
@@ -58,7 +63,7 @@
 // Colour Swatches
 // ---------------
 
-// @color-swatch1: Background 
+// @color-swatch1: Background
 // @color-swatch2: Contrast
 // @color-swatch3: Buttons
 // @color-swatch4: Headings
@@ -101,19 +106,19 @@ blockquote:before {
 
 
 // -----------------------------
-// 3. #Forms
+// 3. #Forms (General)
 // -----------------------------
 
 // Form
 // ----------
 
-form, 
-.form { 
+form,
+.form {
 	background-color: @bg-color-alt;
 }
 
 // Form Body
-.form-body { 
+.form-body {
 	margin: 30px;
 	@media @mobile {
 		margin: 20px;
@@ -121,7 +126,7 @@ form,
 }
 
 // Form Group
-.form-group { 
+.form-group {
 	margin-bottom: 20px;
 	@media @mobile {
 		margin-bottom: 10px;
@@ -132,7 +137,7 @@ form,
 // Legend
 // ----------
 
-legend { 
+legend {
 	width: 100%;
 	padding: 10px 30px;
 	background-color: darken(@color-swatch1,9%);
@@ -184,30 +189,6 @@ textarea,
 // 4. #Buttons
 // -----------------------------
 
+// No additional button styles
 
 
-
-// -----------------------------
-// 5. #Images
-// -----------------------------
-
-// Image Captions
-// --------------
-
-// Gallery & Slideshow
-.image-title,
-.image-description {
-	color: @color-swatch1;
-	text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-	@media @tablet {
-		font-size: bkscale(@font-swatch5-font-size,50%);
-	}
-}
-
-// Image Widget
-.image-widget__caption { margin: 10px 0; }
-.image-widget__image-title,
-.image-widget__image-description {
-	color: @font-swatch5-color;
-	text-shadow: none;
-}

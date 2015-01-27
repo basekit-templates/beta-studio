@@ -6,15 +6,16 @@
 // LESS Includes
 // -----------------------------
 
-@import "@{templateCommon}/bk-less-framework.less"; // BaseKit LESS Framework 
+// @import "@{templateCommon}/bk-less-framework.less"; // BaseKit LESS Framework
+@import "@{templateCommon}/bk-less-framework/bk-less-precompiled.less";
 
 // ** BaseKit LESS Framework is a set of non obtrusive LESS files that can be pulled into your template
 // to guarentee widgets come to life. Proivides default styles for all widgets. Uncomment to activate.
 
 // Template Includes
-@import "@{templateLocal}/less/theme.less"; // Theme
-@import "@{templateLocal}/less/widgets.less"; // Widgets
-@import "@{templateLocal}/less/mixins.less"; // Mixins
+@import "@{templateLocal}/less/mixins.less";     // Mixins
+@import "@{templateLocal}/less/theme.less";      // Theme
+@import "@{templateLocal}/less/widgets.less";    // Widgets
 @import "@{templateLocal}/less/navigation.less"; // Navigation
 
 // Plugin Includes
@@ -30,7 +31,7 @@
 // Page Settings
 // -----------------------------
 
-// Page Container 
+// Page Container
 // --------------
 
 .container {
@@ -49,9 +50,5 @@
 .zone-content {
 	margin: 50px 0;
 }
-
-
-
-
 
 
