@@ -2,53 +2,35 @@
 // BaseKit Standard Template: Beta Studio
 // --------------------------------------
 
+
 // -----------------------------
-// LESS Includes
+// #LESS Includes
 // -----------------------------
 
-// @import "@{templateCommon}/bk-less-framework.less"; // BaseKit LESS Framework
+// BK LESS Framework Include
+// -------------------------
+
+// @import "@{templateCommon}/bk-less-framework.less";
 @import "@{templateCommon}/bk-less-framework/bk-less-precompiled.less";
 
-// ** BaseKit LESS Framework is a set of non obtrusive LESS files that can be pulled into your template
-// to guarentee widgets come to life. Proivides default styles for all widgets. Uncomment to activate.
+// BaseKit LESS Framework is a set of non-obtrusive LESS files
+// providing CSS resets and basic styling for widgets, typography, forms etc;
+// it also includes font icons and other theme settings.
 
-// Template Includes
+
+// Theme Includes
+// --------------
+
 @import "@{templateLocal}/less/mixins.less";     // Mixins
+@import "@{templateLocal}/less/typography.less"; // Typography
 @import "@{templateLocal}/less/theme.less";      // Theme
 @import "@{templateLocal}/less/widgets.less";    // Widgets
 @import "@{templateLocal}/less/navigation.less"; // Navigation
 
+
 // Plugin Includes
-@import "@{templateLocal}/less/plugins/plugin-blog.less"; // Plugin: Blog
-@import "@{templateLocal}/less/plugins/plugin-menu.less"; // Plugin: Menu
-@import "@{templateLocal}/less/plugins/plugin-ecommerce.less"; // Plugin: Ecommerce
-@import "@{templateLocal}/less/plugins/plugin-pagination.less"; // Plugin: Pagination
+// ---------------
 
-
-
-
-// -----------------------------
-// Page Settings
-// -----------------------------
-
-// Page Container
-// --------------
-
-.container {
-    width: 90%;
-    margin: 0 5%;
-    @media only screen and (min-width: 1140px) {
-    	width: 960px; // 1140px - 10% for margins
-		margin: 0 auto;
-	}
-}
-
-
-// Zone Content
-// ------------
-
-.zone-content {
-	margin: 50px 0;
-}
-
-
+@import "@{templateLocal}/less/plugins/plugin-blog.less";       // Plugin: Blog CSS
+@import "@{templateLocal}/less/plugins/plugin-menu.less";       // Plugin: Menu CSS
+@import "@{templateLocal}/less/plugins/plugin-ecommerce.less";  // Plugin: Ecommerce CSS

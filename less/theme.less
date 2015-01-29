@@ -7,21 +7,45 @@
 // #Table of Contents
 // -----------------------------
 
-// 1. #Header & Footer
-// 2. #Typography
-// 3. #Forms
-// 4. #Buttons
-// 5. #Images
+// 1. #Page Container
+// 2. #Header & Footer
+// 3. #Forms (General)
+// 4. #Forms (Widgets)
+
+
+// -----------------------------
+// #1. Page Settings
+// -----------------------------
+
+// Page Container
+// --------------
+
+.container {
+    width: 90%;
+    margin: 0 5%;
+    @media only screen and (min-width: 1140px) {
+    	width: 960px; // 1140px - 10% for margins
+		margin: 0 auto;
+	}
+}
+
+
+// Zone Content
+// ------------
+
+.zone-content {
+	margin: 50px 0;
+}
 
 
 
 
 // -----------------------------
-// 1. #Header & Footer
+// 2. #Header & Footer
 // -----------------------------
 
-.template-header,
-.template-footer {
+.theme-header,
+.theme-footer {
 	.flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
 	padding: 60px 0;
 	background-color: @spare-color;
@@ -36,7 +60,7 @@
 // Footer
 // ----------
 
-.template-footer {
+.theme-footer {
 	background-color: @button-color;
 	// Change heading elements to white
 	h1, h2, h3, h4 {
@@ -51,55 +75,6 @@
 		padding: 0;
 		background-color: transparent;
 	}
-}
-
-
-
-
-// -----------------------------
-// 2. #Typography
-// -----------------------------
-
-// Colour Swatches
-// ---------------
-
-// @color-swatch1: Background
-// @color-swatch2: Contrast
-// @color-swatch3: Buttons
-// @color-swatch4: Headings
-// @color-swatch5: Paragraph
-// @color-swatch6: Navigation Links
-// @color-swatch7: Spare
-
-
-// Font Swatches
-// -------------
-
-// font1:  Heading 1
-// font2:  Heading 2
-// font3:  Heading 3
-// font4:  Heading 4
-// font5:  Paragraph
-// font6:  Navigation Link
-// font7:  Buttons
-// font8:  Feature Headline
-// font9:  Feature Strapline
-// font10: Company Name (Logo)
-
-
-// Standard Text Link
-// ------------------
-
-a { color: @link-color; }
-
-
-// Blockquote
-// ----------
-
-blockquote:before {
-	margin-right: 10px;
-	font-size: 32px;
-	color: @color-swatch3;
 }
 
 
@@ -186,9 +161,30 @@ textarea,
 
 
 // -----------------------------
-// 4. #Buttons
+// 4. #Forms (Widgets)
 // -----------------------------
 
-// No additional button styles
+// Contact, Sign Up, Blog Search Forms
+// -----------------------------------
 
-
+// Form Group
+.signupform,
+.blogsearch {
+	.form-group {
+		margin-bottom: 0;
+		&:first-child {
+			-ms-flex: 0 11 100%;
+			-webkit-flex: 0 11 100%;
+			flex: 0 11 100%;
+			margin-right: 10px;
+		}
+	}
+	.form-body {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+	.label {
+		display: none;
+	}
+}

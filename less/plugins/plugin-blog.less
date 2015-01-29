@@ -4,27 +4,7 @@
 
 
 // -----------------------------
-// #Blog Post List
-// -----------------------------
-
-.blogpostlist__pagination-item {
-	display: inline-block;
-	margin-left: 10px;
-}
-
-
-// Sharing Buttons
-// ---------------
-
-.blogpost__button,
-.blogpost-list__button {
-	padding: 6px 10px;
-	font-size: 14px;
-}
-
-
-// -----------------------------
-// #Blog Post
+// Single Blog Post
 // -----------------------------
 
 // Post Article
@@ -53,49 +33,17 @@
 }
 
 
-// Post Footer
-// -----------
+// Sharing Buttons
+// ---------------
 
-// Removes icon margin at mobile
-.blogpost-list__button:before {
-	@media @mobile {
-		margin-right: 0;
-	}
-}
-
-// Hides network name at mobile
-.blogpost-list__network-name {
-	@media @mobile {
-		display: none;
-	}
+.sharing-links .button {
+	padding: 6px 10px;
+	font-size: 14px;
 }
 
 
 // Blog Search
 // -----------
 
-// Form Group
-.form-group.blog-search__form-group {
-	margin-bottom: 0;
-}
-
-.blog-search__form-body {
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-}
-
-.blog-search__form-group:first-child {
-	-ms-flex: 0 11 100%;
-	-webkit-flex: 0 11 100%;
-	flex: 0 11 100%;
-	margin-right: 10px;
-}
-
-// Hide search label
-.blog-search__label { display: none; }
-
-// Search Input
-.input--search.blog-search__input { width: 100%; }
-
+// See 'theme.less > 4. #Forms (Widgets)'
 

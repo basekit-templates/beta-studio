@@ -8,26 +8,22 @@
 
 // 1. #Single Product
 // 2. #Product List
-// 3. #Product Images
-// 4. #Basket Widget
-// 5. #Basket Summary
+// 3. #Basket Widget
+// 4. #Basket Summary
 
 
 // -----------------------------
 // 1. #Single Product
 // -----------------------------
 
-// Display images and content inline
+// Product Layout
+// --------------
+
 .product-images,
 .product-content {
     display: inline-block;
     vertical-align: top;
 }
-
-
-// Product Images
-// --------------
-
 .product-images {
     width: 45%;
     margin-right: 3%;
@@ -36,11 +32,6 @@
         margin-right: 0;
     }
 }
-
-
-// Product Content
-// ---------------
-
 .product-content {
     width: 51%;
     @media @tablet {
@@ -48,50 +39,80 @@
     }
 }
 
+// Product Image Height
+.product-image .image-link {
+    height: 300px;
+    line-height: 300px;
+    @media @mobile {
+        height: 200px;
+        line-height: 200px;
+    }
+}
+
 // Product Details
-.product-title { font-size: bkscale(@font-swatch1-font-size,0.8); }
+.product-title       { font-size: bkscale(@font-swatch1-font-size,0.8); }
 .product-description { font-size: bkscale(@font-swatch5-font-size,0.9); }
-.product-price { color: @color-swatch3; }
+.product-price       { color: @color-swatch3; }
 
 
-// Product Form
-// ------------
+// Product Actions Form
+// --------------------
 
-.product__form      { 
-    margin-top: 20px;
-    background-color: transparent;
+.product-actions {
+    // Reset form styles
+    .form {
+        background-color: transparent;
+    }
+    .form-group:last-child {
+        margin-bottom: 10px;
+    }
+    .legend {
+        padding: 0 0 10px;
+        background-color: transparent;
+        border: 0;
+    }
+    .form-body {
+        margin: 0 0 20px 0;
+    }
+
+    // Display variation elements inline
+    .label,
+    .select-wrap {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .label {
+        margin: 4px 10px 0 0;
+    }
+
+    // Select Wrap
+    .select {
+        min-width: 150px;
+    }
 }
-.product__form-body { margin: 0; }
 
-// Reset legend styles
-.product__legend {
-    padding: 0 0 10px;
-    background-color: transparent;
-    border: 0;
-}
-
-// Form Select
-.product__select { min-width: 150px; }
-
-// Add to Basket,
-// View Basket Buttonss
-.button--submit.product__input,
-.product__button {
+// Product Actions & View Basket Buttons
+.product-actions .button,
+.view-basket-wrap .button {
+    .button--secondary; // Secondary button style (mixins.less)
     min-width: 150px;
-    padding: 5px 10px;
     text-align: center;
-    font-size: 14px;
+}
+.view-basket-wrap .button {
+    background-color: @green;
 }
 
 // Product Tags
-.tag-item {
-    margin-right: -4px;
-}
-.tag-item:first-child:before {
-    display: none;
-}
-.tag-item:before {
-    content: ',';
+.tag-list {
+    .tag-item {
+        margin-right: -4px;
+    }
+    .tag-item:before {
+        content: ',';
+    }
+    .tag-item:first-child:before {
+        display: none;
+    }
 }
 
 
@@ -122,38 +143,40 @@
 // Product Filters
 // ---------------
 
-.ecomproductslist__form-group,
-.ecomproductslist__select {
-    @media @mobile {
-        width: 100%;
-        margin-right: 0;
+.product-filters {
+
+    // Form Group
+    .form-group {
+        margin-bottom: 0;
+
+        @media @mobile {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    // Search Input
+    .input--search {
+        padding: 0;
+        border-radius: 4px;
+        font-size: 12px;
+        text-indent: 10px;
+    }
+
+    // Search Button
+    .button--submit {
+        padding: 4px 12px;
+        font-size: 16px;
     }
 }
 
-// Filtert Search Input
-.input--search.ecomproductslist__input {
-    padding: 0;
-    font-size: 12px;
-    text-indent: 10px;
-}
 
-// Filter Submit Button
-.button--submit.ecomproductslist__input {
-    padding: 4px 12px;
-    font-size: 16px;
-}
+// Product List Pagination
+// -----------------------
 
-
-
-
-// -----------------------------
-// 3. #Product Images
-// -----------------------------
-
-// Adds margin to product image div
-.product-item-image,
-.basket-item-image {
-    margin-bottom: 20px;
+.listing-pagination .button--pagination {
+    padding: 5px 10px;
+    font-size: 14px;
 }
 
 
@@ -165,13 +188,9 @@
 
 // Basket Body
 .basket-body {
-    min-width: 40%;
-    width: 50%;
+    max-width: 500px;
 	padding: 30px;
 	background-color: darken(@color-swatch1,5%);
-    @media @tablet {
-        width: 100%;
-    }
     @media @mobile {
         padding: 20px;
     }
@@ -184,18 +203,43 @@
 	background-color: @bg-color;
 }
 
-// Remove BG colour on summary form
-.form.basket-summary__summary-form { background-color: transparent; }
-
 
 // Baseket Layout
 // --------------
 
+// Image / Details positioning
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+    vertical-align: top;
+}
+.basket-item-image {
+    width: 20%;
+    margin-right: 5%;
+    @media @mobile {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+.basket-item-details {
+    width: 73%;
+    @media @mobile {
+        width: 100%;
+    }
+}
+
+// Basket Product Title
+.basket-item-name {
+    display: block;
+    max-width: 90%;
+    line-height: @font-swatch5-line-height;
+    @media @mobile {
+        width: 100%;
+    }
+}
 
 // Remove Item Button
-// ------------------
-
-// Position in top-right
 .item-remove {
 	position: absolute;
     top: 30px;
@@ -206,13 +250,8 @@
     font-size: 14px;
 }
 
-// Remove icon spacing
-.item-remove:before {
-    margin-right: 0;
-}
-
 // Hide button text
-.remove-text { 
+.remove-text {
     display: none;
 }
 
@@ -220,43 +259,52 @@
 
 
 // -----------------------------
-// 5. #Basket Summary
+// 4. #Basket Summary
 // -----------------------------
 
-
-// Basic Cell Settings
-// -------------------
-
-// Table Cell Heading 
-.cell--header.basket-summary__cell {
-    background-color: darken(@bg-color,2%);
-}
-
-// Table Cell
-.basket-summary__cell { 
-    border: 1px solid darken(@bg-color-alt,7%);
-}
-
-
-// Summary Table at mobile
-// -----------------------
-
-@media @mobile  {
-
-    // Remove cell border
-    .basket-summary__cell { border: 0; }
+.summary-table {
 
     // Give odd table rows a BG colour
-    .basket-summary__table-row:nth-child(odd) {
+    .table-row:nth-child(odd) {
+        @media @mobile {
+            background-color: darken(@bg-color,2%);
+        }
+    }
+
+    // Table Cell
+    .cell {
+        border: 1px solid darken(@bg-color-alt,7%);
+        @media @mobile {
+            border: 0;
+        }
+    }
+    .cell:not(.cell--header) {
+        padding: 20px 12px;
+        @media @mobile {
+            padding: 8px 12px;
+        }
+    }
+
+    // Cell Header
+    .cell--header {
         background-color: darken(@bg-color,2%);
     }
 
-    // Add border-top to 'price' and 'total' cells
-    .cell--price.basket-summary__cell,
-    .cell--total.basket-summary__cell {
-        border-top: 1px solid darken(@bg-color-alt,7%);
+    // Table Tow: Order Total
+    .cell--order-total {
+        padding: 20px 12px;
     }
 
 }
 
+// Remove background color from form
+.summary-form {
+    background-color: transparent;
+    text-align: right;
+
+    // Submit Button
+    .button--submit {
+        background-color: @green;
+    }
+}
 

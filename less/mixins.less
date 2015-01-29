@@ -1,41 +1,42 @@
-// -----------------------------
-// Beta Studio: CSS > Mixins
-// -----------------------------
+// ---------------------------------
+// Beta Studio: LESS > Mixins
+// ---------------------------------
+
+// Editor Color Variables
+// ----------------------
+
+// @color-swatch1: Background
+// @color-swatch2: Contrast
+// @color-swatch3: Buttons
+// @color-swatch4: Headings
+// @color-swatch5: Paragraph
+// @color-swatch6: Navigation Links
+// @color-swatch7: Spare
 
 
-// -----------------------------
-// Colour Variables
-// -----------------------------
+// Color Variables
+// ----------------------
 
-// Background
-@bg-color: @color-swatch1; // Main BG
+// Swatch Variables
+
+@bg-color: @color-swatch1;                // Background
+@contrast-color: @color-swatch2;          // Contrast Color
+@button-color: @color-swatch3;            // Button BG Color
+@heading-color: @color-swatch4;           // Heading Text Color (H1 - H4)
+@paragraph-color: @color-swatch5;         // Paragraph Text Color
+@nav-color: @color-swatch6;               // Nav Link Color
+@spare-color: @color-swatch7;             // Spare Color
+
+// Custom Variables
+
 @bg-color-alt: darken(@color-swatch1,5%); // Alt BG
-
-// Contrast Colour
-@contrast-color: @color-swatch2;
-
-// Button BG Colour
-@button-color: @color-swatch3;
-@link-color: @color-swatch3;
-
-// Heading Text Colour (H1 - H4)
-@heading-color: @color-swatch4;
-
-// Paragraph Text Colour
-@paragraph-color: @color-swatch5;
-
-// Nav Link Colour
-@nav-color: @color-swatch6;
-
-// Spare Colour
-@spare-color: @color-swatch7;
+@link-color: @color-swatch3;              // Link Colour
+@green: #77d388;                          // Green
 
 
 
-
-// -----------------------------
 // Flexbox: Vertical Align
-// -----------------------------
+// -----------------------
 
 .flex-vert-center {
 	display: -webkit-flexbox;
@@ -48,11 +49,13 @@
 	align-items: center;
 }
 
+
+// Animations
+// ----------
+
 .transition(@duration, @ease:ease-out) {
-	-webkit-transition: all @duration @ease;
+ 	-webkit-transition: all @duration @ease;
 	-moz-transition:    all @duration @ease;
 	-o-transition:      all @duration @ease;
 	transition:         all @duration @ease;
 }
-
-
