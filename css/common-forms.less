@@ -47,7 +47,7 @@
 		padding: 0 1.2em;
 		font-size: bkscale(@font-swatch7-font-size, 0.75);
 		line-height: (@font-swatch7-font-size * 2);
-	} 
+	}
 
 	&:hover {
 		background-color: @font-swatch7-background-color-hover;
@@ -83,8 +83,9 @@
 .widget input[type="text"],
 .widget input[type="email"],
 .productlist-filter .productlist-search input,
-.signupform fieldset input
- {
+.signupform fieldset input,
+.fonectacontactform input,
+.fonectacontactform textarea {
 	background-color: @color-swatch1;
 	border-radius: 0;
 	padding: 0 1em;
@@ -102,11 +103,11 @@
 		font-size: bkscale(@font-swatch7-font-size, 0.75);
 		height: (@font-swatch7-font-size * 2);
 		line-height: (@font-swatch7-font-size * 2);
-	} 
+	}
 
 
 	&:hover {
-		
+
 	}
 
 	&:focus {
@@ -115,7 +116,8 @@
 	}
 }
 
-.contactform textarea {
+.contactform textarea,
+.fonectacontactform textarea {
 	line-height: bkscale(@font-swatch7-line-height, 0.7);
 	min-height: 10em;
 	padding-top: 0.6em;
@@ -124,7 +126,7 @@
 		line-height: bkscale(@font-swatch7-line-height, 0.5);
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
-	} 
+	}
 }
 
 // Labels
@@ -132,7 +134,8 @@
 .signupform fieldset label,
 .blog-search-form label,
 .widget.ecomcheckout .delivery label,
-.ecom-product-vartitle {
+.ecom-product-vartitle,
+.fonectacontactform label {
     font-family:@font-swatch1-font-family;
     font-size:@font-swatch4-font-size;
     font-weight:@font-swatch4-font-weight;
@@ -140,12 +143,12 @@
     color: @color-swatch4;
     letter-spacing: @font-swatch4-letter-spacing;
     margin-bottom: 0.5em;
-   
+
 
     @media only screen and (max-width : 460px) {
 		line-height: bkscale(@font-swatch4-line-height, 0.8);
 		font-size:bkscale(@font-swatch4-font-size, 0.8);
-	} 
+	}
 }
 
 
@@ -180,11 +183,11 @@
 		@media only screen and (max-width : 460px) {
 			font-size: bkscale(@font-swatch7-font-size, 0.75);
 			height: (@font-swatch7-font-size * 2);
-		} 
+		}
 
 		&:hover {
 			border-color: @font-swatch7-background-color-hover;
-			
+
 		}
 
 		&:focus {
@@ -205,6 +208,18 @@
 }
 
 
+// Fonecta contact form checkboxes
+
+input[type="checkbox"] {
+	width: auto;
+	height: auto;
+	-webkit-appearance: checkbox;
+    -moz-appearance:    checkbox;
+    appearance:         checkbox;
+}
+
+
+
 // Placeholders
 input::-webkit-input-placeholder {
   color:    lighten(@color-swatch5,15%);
@@ -218,7 +233,7 @@ input::-moz-placeholder {  /* Firefox 19+ */
   color:    lighten(@color-swatch5,15%);
 }
 
-input:-ms-input-placeholder {  
+input:-ms-input-placeholder {
    color:    lighten(@color-swatch5,15%);
 }
 
