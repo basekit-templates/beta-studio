@@ -1,7 +1,7 @@
 {
 	"name":"Beta Studio",
 	"thumbnail":"betastudio.png",
-	"screenshot":"betastudio.png",
+	"screenshot":"beta-studio-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
