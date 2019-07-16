@@ -1,5 +1,6 @@
 {
 	"name":"Beta Studio",
+    "versionTenCompatible": 1,
 	"thumbnail":"betastudio.png",
 	"screenshot":"beta-studio-screenshot.jpg",
 	"templateType":"standard",
