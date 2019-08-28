@@ -14,8 +14,13 @@
     width: 100%;
     margin: 0;
 }
+
 .main {
     padding: 0;
+}
+
+.main [data-name="row"].widget {
+    margin-bottom: 0;
 }
 
 .widget.content {
@@ -43,7 +48,8 @@
 
 // Move spacing to first widget in the main zone (not sections)
 .edit #page-zones__main-overlay + .widget:not(.row),
-#page-zones__main > .widget:not(.row):first-child {
+#page-zones__main > .widget:not(.row):first-child,
+#page-zones__main > .widget:not(.row) + .widget:not(.row) {
     margin-top: 20px;
     
     @media @mobile {
